@@ -7,15 +7,25 @@ body {
 }
 
 .maintitle {
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
     width: 100%;
-    text-align:center;
+    text-align: center;
     background-color: #333f50;
 }
+
 .maintitle_img {
     width: 100%;
     display:inline-block;
 }
 
+.maintitle_text {
+    font-size: large;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
 .title_img {
-    width: 4%;
+    width: 13%;
 }
