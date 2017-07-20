@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 #cssmenu {
-    background: #f96e5b;
+    background: #333f5;
     width: auto;
 }
 #cssmenu ul {
@@ -71,7 +71,7 @@
     bottom: 0;
     height: 3px;
     width: 0;
-    background: #333333;
+    background: #db1825;
     -webkit-transition: width .25s;
     -moz-transition: width .25s;
     -ms-transition: width .25s;
