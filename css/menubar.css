@@ -83,7 +83,7 @@
     display: none;
 }
 #cssmenu ul li.active a {
-    color: #333333;
+    color: white;
 }
 #cssmenu ul li.active a:before {
     width: 100%;
