@@ -1,5 +1,5 @@
 footer {
-    position: absolute;
+    position: relative;
     right: 0;
     bottom: 0;
     left: 0;
@@ -26,4 +26,8 @@ footer {
     box-sizing: border-box;
     border-left: 1px solid #dadcdd;
     min-height: 310px;
+}
+
+.menu-item {
+    text-align: left;
 }

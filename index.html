@@ -8,9 +8,13 @@
         <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./css/menubar.css">
         <link rel="stylesheet" href="./css/footer.css">
+        <link rel="stylesheet" href="./css/slider.css">
+        <link rel="stylesheet" href="./css/swiper.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.js"></script>
+        <script src="./js/swiper.js"></script>
+        <script src="./js/swiper.jquery.js"></script>
 
 
     </head>
@@ -33,7 +37,33 @@
         </header>
 
         <section>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                    <div class="swiper-slide">Slide 10</div>
+                </div>
+            </div>
 
+            <!-- Swiper JS -->
+            <script src="../dist/js/swiper.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper('.swiper-container');
+            </script>
+            <div class="bg-white"><section class ="pad-md pad-lgtop"><div class="text-center section-header"><p class="quotation">"Site Scan is a must have for any surveyor. I can collect detailed, accurate data for an entire job site, and save hours of work on every project.”</p><p class="pad-smtop quotation_attribution">Steve Moran, Principal, Moran Surveying</p></div></section></div><div class="bg-white1"><section class ="pad-md"><div class="text-center pad-md"><div class="col-md-6 col-md-offset-0"><div class="float-left column-spanx">            <img src="https://3dr.com/wp-content/uploads/2017/04/pix4d_1439.png" alt="Pix4D orthomosaic" width="439" height="231" />
+        </div></div><div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Topographic surveys of inaccessible terrain</h2><p>Challenging and inaccessible terrain can be tedious, difficult, and expensive to survey with GPS equipment, total stations, or aerial LiDAR. Site Scan makes surveying steep ravines, inaccessible river banks, or quick-sinking mud safe and easy.</p></section></div><div class="bg-white"><section class ="pad-md"><div class="row pad-mdbot"><div class="col-sm-offset-2 col-sm-8"><h1 class="text-center">Safe and easy aerial surveying with drones</h1><div class="section-body"><p>Site Scan enables you to quickly generate a topographic survey of any site—even an inaccessible one—quickly and cost effectively. With a few taps on a tablet, anyone on your team can generate orthophotos, point clouds, and meshes, which are used to build design surfaces and contours. The Site Scan workflow is easy, but personalized support is always available from our team of success engineers.</p></div></div></section></div><div class="bg-white1"><section class ="pad-md"><div class="text-center pad-md"><div class="col-md-6 col-md-offset-0"><div class="float-left column-spanx">            <img src="https://3dr.com/wp-content/uploads/2017/04/epperson.png" alt="" width="439" height="231" />
+        </div></div><div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Quickly capture large sites</h2><p>Fast-moving earthworks projects require the daily attention of the civil engineer, constructor, and landscape architect. Commissioning a survey every day for the 8-acre lagoon pictured would have been logistically impossible, but the Site Scan generates the exact same deliverables in a fraction of the time. With daily point clouds, contours, and volume estimates, project teams can focus the efforts of their graders and scrapers.
+        </p></section></div><div class="bg-white"><section class ="pad-md"><div class="text-center section-header"><p class="quotation">“Finally there is a solution that combines intelligent hardware, intuitive software, and camera systems built for mapping, not movie making. 3DR is truly changing the way that people will think about professional mapping drones.” </p><p class="pad-smtop quotation_attribution">Christian Stallings, R&D Manager at McKim & Creed, Certified Photogrammetrist</p></div></section></div><div class="bg-white1"><section class ="pad-md"><div class="row pad-mdbot"><div class="col-sm-offset-2 col-sm-8"><h1 class="text-center">Ground Control Points for Improved Accuracy</h1><div class="section-body"><p>Ground control points are essential for accurate aerial data collection. With Site Scan, you can input ground control points to provide your clients with accurately geolocated point clouds and orthophotos, ensuring your client deliverables measure up to your high standards. If you need help, your designated success engineers will walk you through properly setting up ground control points and targets.<br />
+        </p></div></div></section></div><div class="bg-white"><section class ="pad-md"><div class="text-center pad-md"><div class="col-md-6 col-md-offset-0"><div class="float-left column-spanx"></div></div><div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Survey and measure safely</h2><p>Slipping while climbing stockpiles is a leading cause of injury on-site. With drones, you don’t have to choose between safety and accurate volume data: capture your stockpiles and aggregates from above with automated drone flights, and keep your field professionals safe and productive on the ground.</p></section></div><div class="email-partial"><section class="text-center font-white"><h1 class="pad-smbot">Looking for aerial data capture on your own site?</h1><div class="text-center pad-mdtop"><a class="clear-btn bottom-cta" data-category="cta" data-location="sitescan-bottom" href="https://3dr.com/enterprise/contact">Request a Demo</a></div></section></div>
         </section>
 
         <footer>
@@ -43,7 +73,7 @@
                         <div class="row">
                             <div class="col-md-2 pad-mx divider-border">
                                 <div class="footer-section">
-                                    <span class="h7">3DR Site Scan</span>
+                                    <span class="h7">MAD CHICKEN Site Scan</span>
                                     <img class="hidden-md hidden-lg" src="https://3dr.com/wp-content/themes/3dr/images/home/plus.svg">
                                 </div>
                                 <ul id="menu-footer-1" class="menu"><li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://3dr.com/enterprise/features/">Features</a></li>
