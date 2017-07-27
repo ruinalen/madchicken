@@ -1,152 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>MAD CHICKENe</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/index.css">
-        <link rel="stylesheet" href="./css/menubar.css">
-        <link rel="stylesheet" href="./css/footer.css">
-        <link rel="stylesheet" href="./css/slider.css">
-        <link rel="stylesheet" href="./css/swiper.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.js"></script>
-        <script src="./js/swiper.js"></script>
-        <script src="./js/swiper.jquery.js"></script>
-
-
-    </head>
-    <body>
-        <header>
-            <div CLASS="maintitle">
-                <div class="maintitle_img">
-                    <img src="img/main_logo.png" class="title_img">
-                </div>
-                <div id="cssmenu">
-                    <ul>
-                        <li class="active"><a href="#"><span>Home</span></a></li>
-                        <li><a href="#"><span>Products</span></a></li>
-                        <li><a href="#"><span>Company</span></a></li>
-                        <li><a href="#"><span>Comunity</span></a></li>
-                        <li class="last"><a href="#"><span>Contact</span></a></li>
-                    </ul>
+<head>
+    <title>MAD CHICKENe</title>
+    <link rel="import" href="./head.html">
+</head>
+<body>
+<!-- 네비게이션 바 영역 -->
+<header>
+    <script>
+        $(function(){
+            $("header").load("./header.html");
+        });
+    </script>
+</header>
+<!-- 메인베너영역 -->
+<section>
+    <div class="swiper-container">
+        <div class="parallax-bg" style="background-image:url(./img/slider/slider01.jpg)" data-swiper-parallax="-23%"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-100">Slide 1</div>
+                <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                <div class="text" data-swiper-parallax="-300">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
                 </div>
             </div>
-        </header>
-
-        <section>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                    <div class="swiper-slide">Slide 6</div>
-                    <div class="swiper-slide">Slide 7</div>
-                    <div class="swiper-slide">Slide 8</div>
-                    <div class="swiper-slide">Slide 9</div>
-                    <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-100">Slide 2</div>
+                <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                <div class="text" data-swiper-parallax="-300">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
                 </div>
             </div>
-
-            <!-- Swiper JS -->
-            <script src="../dist/js/swiper.min.js"></script>
-
-            <!-- Initialize Swiper -->
-            <script>
-                var swiper = new Swiper('.swiper-container');
-            </script>
-            <div class="bg-white"><section class ="pad-md pad-lgtop"><div class="text-center section-header"><p class="quotation">"Site Scan is a must have for any surveyor. I can collect detailed, accurate data for an entire job site, and save hours of work on every project.”</p><p class="pad-smtop quotation_attribution">Steve Moran, Principal, Moran Surveying</p></div></section></div><div class="bg-white1"><section class ="pad-md"><div class="text-center pad-md"><div class="col-md-6 col-md-offset-0"><div class="float-left column-spanx">            <img src="https://3dr.com/wp-content/uploads/2017/04/pix4d_1439.png" alt="Pix4D orthomosaic" width="439" height="231" />
-        </div></div><div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Topographic surveys of inaccessible terrain</h2><p>Challenging and inaccessible terrain can be tedious, difficult, and expensive to survey with GPS equipment, total stations, or aerial LiDAR. Site Scan makes surveying steep ravines, inaccessible river banks, or quick-sinking mud safe and easy.</p></section></div><div class="bg-white"><section class ="pad-md"><div class="row pad-mdbot"><div class="col-sm-offset-2 col-sm-8"><h1 class="text-center">Safe and easy aerial surveying with drones</h1><div class="section-body"><p>Site Scan enables you to quickly generate a topographic survey of any site—even an inaccessible one—quickly and cost effectively. With a few taps on a tablet, anyone on your team can generate orthophotos, point clouds, and meshes, which are used to build design surfaces and contours. The Site Scan workflow is easy, but personalized support is always available from our team of success engineers.</p></div></div></section></div><div class="bg-white1"><section class ="pad-md"><div class="text-center pad-md"><div class="col-md-6 col-md-offset-0"><div class="float-left column-spanx">            <img src="https://3dr.com/wp-content/uploads/2017/04/epperson.png" alt="" width="439" height="231" />
-        </div></div><div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Quickly capture large sites</h2><p>Fast-moving earthworks projects require the daily attention of the civil engineer, constructor, and landscape architect. Commissioning a survey every day for the 8-acre lagoon pictured would have been logistically impossible, but the Site Scan generates the exact same deliverables in a fraction of the time. With daily point clouds, contours, and volume estimates, project teams can focus the efforts of their graders and scrapers.
-        </p></section></div><div class="bg-white"><section class ="pad-md"><div class="text-center section-header"><p class="quotation">“Finally there is a solution that combines intelligent hardware, intuitive software, and camera systems built for mapping, not movie making. 3DR is truly changing the way that people will think about professional mapping drones.” </p><p class="pad-smtop quotation_attribution">Christian Stallings, R&D Manager at McKim & Creed, Certified Photogrammetrist</p></div></section></div><div class="bg-white1"><section class ="pad-md"><div class="row pad-mdbot"><div class="col-sm-offset-2 col-sm-8"><h1 class="text-center">Ground Control Points for Improved Accuracy</h1><div class="section-body"><p>Ground control points are essential for accurate aerial data collection. With Site Scan, you can input ground control points to provide your clients with accurately geolocated point clouds and orthophotos, ensuring your client deliverables measure up to your high standards. If you need help, your designated success engineers will walk you through properly setting up ground control points and targets.<br />
-        </p></div></div></section></div><div class="bg-white"><section class ="pad-md"><div class="text-center pad-md"><div class="col-md-6 col-md-offset-0"><div class="float-left column-spanx"></div></div><div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Survey and measure safely</h2><p>Slipping while climbing stockpiles is a leading cause of injury on-site. With drones, you don’t have to choose between safety and accurate volume data: capture your stockpiles and aggregates from above with automated drone flights, and keep your field professionals safe and productive on the ground.</p></section></div><div class="email-partial"><section class="text-center font-white"><h1 class="pad-smbot">Looking for aerial data capture on your own site?</h1><div class="text-center pad-mdtop"><a class="clear-btn bottom-cta" data-category="cta" data-location="sitescan-bottom" href="https://3dr.com/enterprise/contact">Request a Demo</a></div></section></div>
+            <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-100">Slide 3</div>
+                <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                <div class="text" data-swiper-parallax="-300">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+</section>
+<!-- 메인 섹션 영역 -->
+<section>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            parallax: true,
+            speed: 600,
+        });
+    </script>
+    <div class="bg-white">
+        <section class="pad-md pad-lgtop">
+            <div class="text-center section-header"><p class="quotation">"Site Scan is a must have for any surveyor. I
+                can collect detailed, accurate data for an entire job site, and save hours of work on every
+                project.”</p>
+                <p class="pad-smtop quotation_attribution">Steve Moran, Principal, Moran Surveying</p></div>
         </section>
-
-        <footer>
-            <div id="footer-nav">
-                <div class="containter  pad-md">
-                    <section>
-                        <div class="row">
-                            <div class="col-md-2 pad-mx divider-border">
-                                <div class="footer-section">
-                                    <span class="h7">MAD CHICKEN Site Scan</span>
-                                    <img class="hidden-md hidden-lg" src="https://3dr.com/wp-content/themes/3dr/images/home/plus.svg">
-                                </div>
-                                <ul id="menu-footer-1" class="menu"><li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://3dr.com/enterprise/features/">Features</a></li>
-                                    <li id="menu-item-7052" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7052"><a href="https://3dr.com/contact/resellers/">Become a Reseller</a></li>
-                                    <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://3dr.com/faa/">FAA Resources</a></li>
-                                    <li id="menu-item-6087" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6087"><a href="https://3dr.com/enterprise/contact/">Request a Demo</a></li>
-                                </ul>	        </div>
-                            <div class="col-md-2 pad-mx divider-border">
-                                <div class="footer-section">
-                                    <span class="h7">Industries</span>
-                                    <img class="hidden-md hidden-lg" src="https://3dr.com/wp-content/themes/3dr/images/home/plus.svg">
-                                </div>
-                                <ul id="menu-footer-2" class="menu"><li id="menu-item-41" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a href="https://3dr.com/enterprise/industries/construction/">Construction</a></li>
-                                    <li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a href="https://3dr.com/enterprise/industries/insurance/">Insurance</a></li>
-                                    <li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="https://3dr.com/enterprise/industries/survey-mapping/">Surveying &amp; Mapping</a></li>
-                                    <li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="https://3dr.com/enterprise/industries/utilities-telecom/">Utilities &amp; Telecom</a></li>
-                                </ul>	        </div>
-                            <div class="col-md-2 pad-mx divider-border">
-                                <div class="footer-section">
-                                    <span class="h7">Products</span>
-                                    <img class="hidden-md hidden-lg" src="https://3dr.com/wp-content/themes/3dr/images/home/plus.svg">
-                                </div>
-                                <ul id="menu-footer-3" class="menu"><li id="menu-item-26378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26378"><a href="https://3dr.com/enterprise/features/">Site Scan™</a></li>
-                                    <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="https://store.3dr.com/t/pixhawk?_ga=1.146407859.628315411.1489196978">Pixhawk</a></li>
-                                </ul>	        </div>
-                            <div class="col-md-2 pad-mx divider-border">
-                                <div class="footer-section">
-                                    <span class="h7">Support</span>
-                                    <img class="hidden-md hidden-lg" src="https://3dr.com/wp-content/themes/3dr/images/home/plus.svg">
-                                </div>
-                                <ul id="menu-footer-4" class="menu"><li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="https://3dr.com/support/">Support Home</a></li>
-                                    <li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="https://3dr.com/support/sitescan/">Site Scan Support</a></li>
-                                    <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="https://3dr.com/support/solo/">Solo Support</a></li>
-                                    <li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="https://3dr.com/support/">Contact Support</a></li>
-                                </ul>	        </div>
-                            <div class="col-md-2 pad-mx divider-border">
-                                <div class="footer-section">
-                                    <span class="h7">About 3DR</span>
-                                    <img class="hidden-md hidden-lg" src="https://3dr.com/wp-content/themes/3dr/images/home/plus.svg">
-                                </div>
-                                <ul id="menu-footer-5" class="menu"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://3dr.com/about/">About</a></li>
-                                    <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="https://3dr.com/careers/">Careers</a></li>
-                                    <li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a href="http://3dr.com/news/">News</a></li>
-                                    <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="https://3dr.com/contact/press/">Press</a></li>
-                                </ul>	        </div>
-                        </div>
-                    </section></div>
-
-            </div>
-
-            <div id="footer-bottom" class="pad-mdtop">
-                <section>
-                    <div class=" pad-md">
-                        <div class="footer-line ">
-                            <span class="h7">MAD CHICKEN</span>
-                            <div class="social">
-                                <a href="https://www.linkedin.com/company/2850196"><span class="fa fa-linkedin icon-circle"></span></a>
-                                <a href="https://twitter.com/3drobotics"><span class="fa fa-twitter icon-circle"></span></a>
-                                <a href="https://vimeo.com/3drobotics"><span class="fa fa-vimeo icon-circle"></span></a>
-                                <a href="https://facebook.com/3drobotics/"><span class="fa fa-facebook icon-circle"></span></a>
-                            </div>
-                        </div>
-                        <div class="footer-line pad-md">
-                            <div class="links">
-                                <span class="spacing"><a href="http://3dr.com/privacy/">Privacy Policy</a></span>
-                                <span class="spacing"><a href="http://3dr.com/terms/">Terms of Use</a></span>
-                                <span class="spacing"><a href="http://3dr.com/support/legal/">Legal</a></span>
-                            </div>
-                            <span class="spacing legal">© 2017 MAD CHICKEN, Inc | Drone &amp; UAV technology. All rights reserved.</span>
-                        </div>
+    </div>
+    <div class="bg-white1">
+        <section class="pad-md">
+            <div class="text-center pad-md">
+                <div class="col-md-6 col-md-offset-0">
+                    <div class="float-left column-spanx"><img
+                            src="https://3dr.com/wp-content/uploads/2017/04/pix4d_1439.png" alt="Pix4D orthomosaic"
+                            width="439" height="231"/>
                     </div>
-                </section>
-            </div>
-        </footer>
-    </body>
+                </div>
+                <div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Topographic
+                    surveys of inaccessible terrain</h2>
+                    <p>Challenging and inaccessible terrain can be tedious, difficult, and expensive to survey with GPS
+                        equipment, total stations, or aerial LiDAR. Site Scan makes surveying steep ravines,
+                        inaccessible river banks, or quick-sinking mud safe and easy.</p>
+        </section>
+    </div>
+    <div class="bg-white">
+        <section class="pad-md">
+            <div class="row pad-mdbot">
+                <div class="col-sm-offset-2 col-sm-8"><h1 class="text-center">Safe and easy aerial surveying with
+                    drones</h1>
+                    <div class="section-body"><p>Site Scan enables you to quickly generate a topographic survey of any
+                        site—even an inaccessible one—quickly and cost effectively. With a few taps on a tablet, anyone
+                        on your team can generate orthophotos, point clouds, and meshes, which are used to build design
+                        surfaces and contours. The Site Scan workflow is easy, but personalized support is always
+                        available from our team of success engineers.</p></div>
+                </div>
+        </section>
+    </div>
+    <div class="bg-white1">
+        <section class="pad-md">
+            <div class="text-center pad-md">
+                <div class="col-md-6 col-md-offset-0">
+                    <div class="float-left column-spanx"><img
+                            src="https://3dr.com/wp-content/uploads/2017/04/epperson.png" alt="" width="439"
+                            height="231"/>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Quickly capture
+                    large sites</h2>
+                    <p>Fast-moving earthworks projects require the daily attention of the civil engineer, constructor,
+                        and landscape architect. Commissioning a survey every day for the 8-acre lagoon pictured would
+                        have been logistically impossible, but the Site Scan generates the exact same deliverables in a
+                        fraction of the time. With daily point clouds, contours, and volume estimates, project teams can
+                        focus the efforts of their graders and scrapers.
+                    </p>
+        </section>
+    </div>
+    <div class="bg-white">
+        <section class="pad-md">
+            <div class="text-center section-header"><p class="quotation">“Finally there is a solution that combines
+                intelligent hardware, intuitive software, and camera systems built for mapping, not movie making. 3DR is
+                truly changing the way that people will think about professional mapping drones.” </p>
+                <p class="pad-smtop quotation_attribution">Christian Stallings, R&D Manager at McKim & Creed, Certified
+                    Photogrammetrist</p></div>
+        </section>
+    </div>
+    <div class="bg-white1">
+        <section class="pad-md">
+            <div class="row pad-mdbot">
+                <div class="col-sm-offset-2 col-sm-8"><h1 class="text-center">Ground Control Points for Improved
+                    Accuracy</h1>
+                    <div class="section-body"><p>Ground control points are essential for accurate aerial data
+                        collection. With Site Scan, you can input ground control points to provide your clients with
+                        accurately geolocated point clouds and orthophotos, ensuring your client deliverables measure up
+                        to your high standards. If you need help, your designated success engineers will walk you
+                        through properly setting up ground control points and targets.<br/>
+                    </p></div>
+                </div>
+        </section>
+    </div>
+    <div class="bg-white">
+        <section class="pad-md">
+            <div class="text-center pad-md">
+                <div class="col-md-6 col-md-offset-0">
+                    <div class="float-left column-spanx"></div>
+                </div>
+                <div class="col-md-6 col-md-offset-0"><h2 class="bold-header pad-xsbot no-top-margin">Survey and measure
+                    safely</h2>
+                    <p>Slipping while climbing stockpiles is a leading cause of injury on-site. With drones, you don’t
+                        have to choose between safety and accurate volume data: capture your stockpiles and aggregates
+                        from above with automated drone flights, and keep your field professionals safe and productive
+                        on the ground.</p>
+        </section>
+    </div>
+    <div class="email-partial">
+        <section class="text-center font-white"><h1 class="pad-smbot">Looking for aerial data capture on your own
+            site?</h1>
+            <div class="text-center pad-mdtop"><a class="clear-btn bottom-cta" data-category="cta"
+                                                  data-location="sitescan-bottom"
+                                                  href="https://3dr.com/enterprise/contact">Request a Demo</a></div>
+        </section>
+    </div>
+</section>
+
+<footer>
+    <script>
+        $(function(){
+            $("footer").load("./footer.html");
+        });
+    </script>
+</footer>
+</body>
 </html>
