@@ -57,28 +57,28 @@ $nextPage = (($currentSection + 1) * ONE_SECTION) - (ONE_SECTION - 1);
 $paging = "<ul>";
 
 if($page != 1) {
-    $paging .= '<li class="page page_start"><a href="./index.php?page=1' . $subString . '">first</a></li>';
+    $paging .= '<li class="page page_start"><a href="./board/index.php?page=1' . $subString . '">first</a></li>';
 }
 if($currentSection != 1) {
-    $paging .= '<li class="page page_prev"><a href="./index.php?page=' . $prevPage . $subString . '">prev</a></li>';
+    $paging .= '<li class="page page_prev"><a href="./board/index.php?page=' . $prevPage . $subString . '">prev</a></li>';
 }
 
 for($i = $firstPage; $i <= $lastPage; $i++) {
     if($i == $page) {
         $paging .= '<li class="page current">' . $i . '</li>';
     } else {
-        $paging .= '<li class="page"><a href="./index.php?page=' . $i . $subString . '">' . $i . '</a></li>';
+        $paging .= '<li class="page"><a href="./board/index.php?page=' . $i . $subString . '">' . $i . '</a></li>';
 
     }
 }
 
 if($currentSection != $allSection) {
-    $paging .= '<li class="page page_next"><a href="./index.php?page=' . $nextPage . $subString . '">next</a></li>';
+    $paging .= '<li class="page page_next"><a href="./board/index.php?page=' . $nextPage . $subString . '">next</a></li>';
 
 }
 
 if($page != $allPage) {
-    $paging .= '<li class="page page_end"><a href="./index.php?page=' . $allPage . $subString . '">last</a></li>';
+    $paging .= '<li class="page page_end"><a href="./board/index.php?page=' . $allPage . $subString . '">last</a></li>';
 
 }
 $paging .= '</ul>';
@@ -126,7 +126,7 @@ $result = $db->query($sql);
             ?>
             <tr>
                 <td class="no"><?php echo $row['id']?></td>
-                <td class="title"><a href="./view.php?id=<?php echo $row['id'] ?>"><?php echo $row['title']?></a></td>
+                <td class="title"><a href="./board/view.php?id=<?php echo $row['id'] ?>"><?php echo $row['title']?></a></td>
                 <td class="author"><?php echo $row['writer']?></td>
                 <td class="date"><?php echo $row['date']?></td>
                 <td class="hit"><?php echo $row['hit']?></td>
@@ -137,13 +137,13 @@ $result = $db->query($sql);
         </tbody>
     </table>
     <div class="btnSet">
-        <a href="write.php" class="btnList btn">wirte</a>
+        <a href="./board/write.php" class="btnList btn">wirte</a>
     </div>
     <div class="paging">
         <?php echo $paging ?>
     </div>
     <div class="searchBox">
-        <form action="./index.php" method="get">
+        <form action="./board/index.php" method="get">
             <select name="searchCategory">
                 <option <?php echo $searchCategory=='title'?'selected="selected"':null?> value="title">title</option>
                 <option <?php echo $searchCategory=='content'?'selected="selected"':null?> value="content">content</option>
