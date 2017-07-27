@@ -1,5 +1,5 @@
 <?php
-require_once("../dbconfig.php");
+require_once("./dbconfig.php");
 
 if (isset($_POST["id"])) {
     $id = $_POST["id"];

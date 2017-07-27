@@ -1,5 +1,5 @@
 <?php
-require_once("../dbconfig.php");
+require_once("./dbconfig.php");
 
 $id = $_POST["id"];
 $writer = $_POST["writer"];
