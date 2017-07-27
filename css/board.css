@@ -1,8 +1,11 @@
-.boardArticle {width: 720px;}
+.boardArticle {
+    width: 46%;
+    margin: 0 25% 0 25%;
+}
 
 /* 글목록 */
 
-#boardList table {width: 720px;}
+#boardList table {width: 100%;}
 
 #boardList th {padding: 5px 0; border-top: 2px solid #666; border-bottom: 1px solid #666;}
 #boardList tr: hover {background: #eee;}
