@@ -1,6 +1,5 @@
 <?php
-require_once("./dbconfig.php");
-
+require_once("./board/dbconfig.php");
 $id = $_POST["id"];
 $writer = $_POST["writer"];
 $password = $_POST["password"];
