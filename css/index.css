@@ -6385,8 +6385,7 @@ section:after {
     padding-bottom: 20px;
 }
 .pad-md {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 .pad-mdtop {
     padding-top: 30px;
