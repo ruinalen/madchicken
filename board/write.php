@@ -1,5 +1,5 @@
 <?php
-require_once("./board/dbconfig.php");
+require_once("./dbconfig.php");
 
 if (isset($_GET["id"]))
 {
@@ -25,7 +25,7 @@ if (isset($id))
 <article class="boardArticle">
     <h3>Free Board</h3>
     <div id="boardWrite">
-        <form action="./write_update.php" method="post">
+        <form action="~/board/write_update.php" method="post">
             <?php
             if(isset($id)) {
                 echo '<input type="hidden" name="id" value="' . $id . '">';
@@ -63,7 +63,7 @@ if (isset($id))
             </table>
             <div class="btnSet">
                 <button type="submit" class="btnSubmit btn"><?php echo isset($id)?'수정':'작성'?></button>
-                <a href="index.php" class="btnList btn">list</a>
+                <a href="./board/index.php" class="btnList btn">list</a>
             </div>
         </form>
     </div>
