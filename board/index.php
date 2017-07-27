@@ -1,5 +1,5 @@
 <?php
-require_once("./dbconfig.php");
+require_once("./board/dbconfig.php");
 
 define("ONE_PAGE_POSTS", 5);
 define("ONE_SECTION", 5);
