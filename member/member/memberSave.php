@@ -1,7 +1,7 @@
 <?php
     include "../include/dbConnect.php";
-    /*echo "<pre>";
-    echo var_dump($_POST);*/
+    echo "<pre>";
+    echo var_dump($_POST);
 
     $memberId = $_POST['memberId'];
     $memberName = $_POST['memberName'];
