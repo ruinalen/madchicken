@@ -96,6 +96,7 @@ $result = $db->query($sql);
     <title>Free Board</title>
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/board.css" />
+    <link rel="stylesheet" href="./css/community.css" />
 </head>
 <body>
 <article class="boardArticle">
