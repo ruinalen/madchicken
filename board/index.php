@@ -97,6 +97,7 @@ $result = $db->query($sql);
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/board.css" />
     <link rel="stylesheet" href="./css/community.css" />
+    <link rel="stylesheet" href="./css/index.css" />
 </head>
 <body>
 <article class="boardArticle">
@@ -105,11 +106,11 @@ $result = $db->query($sql);
     <table>
         <thead>
         <tr class="board_top_tr">
-            <th scope="col" class="no">NO</th>
-            <th scope="col" class="title">TITLE</th>
-            <th scope="col" class="author">WRITER</th>
-            <th scope="col" class="date">DATE</th>
-            <th scope="col" class="hit">HIT</th>
+            <th scope="col" class="no">번호</th>
+            <th scope="col" class="title">제목</th>
+            <th scope="col" class="author">작성자</th>
+            <th scope="col" class="date">날짜</th>
+            <th scope="col" class="hit">조회수</th>
         </tr>
         </thead>
         <tbody>
@@ -139,7 +140,7 @@ $result = $db->query($sql);
     </table>
     <div class="btnSet">
         <div class="submit-btn">
-            <a href="./write.php" class="btnList btn">wirte</a>
+            <a href="./write.php" class="btnList btn">글쓰기</a>
         </div>
     </div>
     <div class="paging">

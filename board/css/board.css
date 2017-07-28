@@ -11,13 +11,12 @@ tr.board_top_tr {
 .submit-btn{
 
 }
-
 a.btnList.btn {
     background-color: #333f50;
     color: white;
     text-decoration: none;
     -webkit-appearance: none;
-    padding: 5px 40px 5px 40px;
+    padding: 0px 25px 3px 25px;
     border-radius: 11px;
     line-height: 0;
     margin-top: 10px;
@@ -31,7 +30,7 @@ a.btnList.btn {
 
 #boardList th {padding: 5px 0; border-top: 2px solid #666; border-bottom: 1px solid #666;}
 #boardList tr:hover {background: #eee;}
-#boardList td {padding: 8px 0; border-bottom: 1px solid #666;}
+#boardList td {padding: 13px 0; border-bottom: 1px solid #666;}
 
 #boardList .no {width: 60px; text-align: center;}
 #boardList .author {width: 100px; text-align: center;}
@@ -48,6 +47,15 @@ a.btnList.btn {
 
 #boardList .paging li.current,
 #boardList .paging li:hover {background: #666;}
+#boardList .paging li.current, #boardList .paging li:hover {
+    background: #333f50;
+    border-radius: 8PX;
+    line-height: 1.2;
+    border-bottom: 3px solid #333f50;
+    border-top: 3px solid #333f50;
+    border-left: 6px solid #333f50;
+    border-right: 6px solid #333f50;
+}
 #boardList .paging li.current,
 #boardList .paging li:hover a { color: #ddd;}
 
