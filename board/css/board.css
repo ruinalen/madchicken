@@ -32,8 +32,8 @@ a.btnList.btn {
 }
 
 #boardList th {padding: 5px 0; border-top: 2px solid #666; border-bottom: 1px solid #666;}
-#boardList tr:hover {background: #333f50;}
-#boardList td {padding: 0.3px 0; border-bottom: 1px solid #666;}
+#boardList tr:hover {background: #eee;}
+#boardList td {padding: 13px 0; border-bottom: 0.3px solid #666;}
 
 #boardList .no {width: 60px; text-align: center;}
 #boardList .author {width: 100px; text-align: center;}
