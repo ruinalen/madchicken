@@ -3,3 +3,9 @@ iframe#board_frame {
      border: 0px solid;
      margin-left: 10%;
  }
+
+#board {
+    width: 100%;
+    height: 50%;
+    margin-top: 8%;
+}
