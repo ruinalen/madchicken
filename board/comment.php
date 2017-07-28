@@ -1,5 +1,6 @@
 <?php
-session_status();
+session_start();
+
 $sql = "select id, postid, depth, content, writer, password from comment 
         where id = depth and postid = " . $id;
 $result = $db->query($sql);
@@ -40,8 +41,20 @@ $result = $db->query($sql);
     <table>
         <tbody>
             <tr>
-                <th scope="row"><label for="coId">writer</label></th>
-                <td><input type="text" name="writer" id="writer"></td>
+                <?php
+                if($_SESSION['ses_userid']!=NULL)
+                {
+                echo '<th scope="row"><label for="coId">writer</label></th>';
+                echo '<td><input type="text" name="writer" id="writer"></td>';
+                }
+                else
+                {
+                    echo '<th scope="row"><label for="coId">writer</label></th>';
+                    echo '<td>';
+                    echo $_SESSION['ses_userid'];
+                    echo '</td>';
+                }
+                ?>
             </tr>
             <tr>
                 <th scope="row">
