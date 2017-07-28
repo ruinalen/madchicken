@@ -50,5 +50,8 @@ echo "에스큐엘문 성공 패스";
     if($dbConnect->query($sql)){
         echo '회원가입 성공';
     }
+    else{
+        echo "실패";
+    }
 ?>
 
