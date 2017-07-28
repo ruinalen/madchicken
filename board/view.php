@@ -1,6 +1,9 @@
 <?php
 require_once("./dbconfig.php");
+session_start();
+if ($_SESSION['ses_perm']==0){
 
+}
 $id = $_GET["id"];
 
 $isHit = !empty($id) && empty($_COOKIE["board_" . $id]);
@@ -49,7 +52,7 @@ $row = $result->fetch_assoc();
         <a href="">목록</a>
     </div>
     <div id="boardComment">
-        <?php require_once('./comment.php') ?>
+        <?php if($_SESSION['ses_perm']==1){require_once('./comment.php')} ?>
     </div>
 </article>
 </body>

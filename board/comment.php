@@ -1,4 +1,5 @@
 <?php
+session_status();
 $sql = "select id, postid, depth, content, writer, password from comment 
         where id = depth and postid = " . $id;
 $result = $db->query($sql);
