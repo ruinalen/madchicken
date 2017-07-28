@@ -45,7 +45,7 @@
     }
 
     //이제부터 넣기 시작
-    $sql = "INSERT INTO member VALUES('','{$memberId}','{$memberName}','{$memberNickName}','{$memberPw}','{$memberEmailAddress}','{$memberBirthDay}');";
+    $sql = "INSERT INTO member VALUES(NULL,'{$memberId}','{$memberName}','{$memberNickName}','{$memberPw}','{$memberEmailAddress}','{$memberBirthDay}');";
     echo $sql;
     if($dbConnect->query($sql)){
         echo '회원가입 성공';
