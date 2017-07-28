@@ -99,16 +99,16 @@ $result = $db->query($sql);
 </head>
 <body>
 <article class="boardArticle">
-    <h3>Free Board</h3>
+    <h3>MAD CHICKEN COMMUNITY</h3>
     <div id="boardList">
     <table>
         <thead>
         <tr>
-            <th scope="col" class="no">no</th>
-            <th scope="col" class="title">title</th>
-            <th scope="col" class="author">writer</th>
-            <th scope="col" class="date">date</th>
-            <th scope="col" class="hit">hit</th>
+            <th scope="col" class="no">NO</th>
+            <th scope="col" class="title">TITLE</th>
+            <th scope="col" class="author">WRITER</th>
+            <th scope="col" class="date">DATE</th>
+            <th scope="col" class="hit">HIT</th>
         </tr>
         </thead>
         <tbody>
@@ -124,7 +124,7 @@ $result = $db->query($sql);
                 $row['date'] = $date;
             }
             ?>
-            <tr>
+            <tr class="board_top_tr">
                 <td class="no"><?php echo $row['id']?></td>
                 <td class="title"><a href="./view.php?id=<?php echo $row['id'] ?>"><?php echo $row['title']?></a></td>
                 <td class="author"><?php echo $row['writer']?></td>
@@ -137,7 +137,9 @@ $result = $db->query($sql);
         </tbody>
     </table>
     <div class="btnSet">
-        <a href="./write.php" class="btnList btn">wirte</a>
+        <div class="submit-btn">
+            <a href="./write.php" class="btnList btn">wirte</a>
+        </div>
     </div>
     <div class="paging">
         <?php echo $paging ?>

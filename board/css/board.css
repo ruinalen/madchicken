@@ -18,7 +18,10 @@
 #boardList .date {width: 100px; text-align: center;}
 #boardList .hit {width: 40px; text-align: center;}
 
-#boardList .btnSet {text-align: right;}
+#boardList .btnSet {
+    text-align: right;
+    margin-top: 15px;
+}
 
 #boardList .paging {text-align: center;}
 #boardList .paging li {display: inline-block; height: 20px; margin: 0 5px; padding: 0 5px; border: 1px solid #666; background: #eee; line-height: 21px;}

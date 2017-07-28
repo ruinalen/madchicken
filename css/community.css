@@ -10,3 +10,25 @@ iframe#board_frame {
     height: 50%;
     margin-top: 8%;
 }
+
+tr.board_top_tr {
+    background-color: #333f50;
+    color: white;
+    font-weight: 500;
+}
+
+.submit-btn{
+
+}
+
+a.btnList.btn {
+    background-color: #333f50;
+    color: white;
+    text-decoration: none;
+    -webkit-appearance: none;
+    padding: 5px 40px 5px 40px;
+    border-radius: 11px;
+    line-height: 0;
+    margin-top: 10px;
+    border: 3px solid #333f50;
+}
