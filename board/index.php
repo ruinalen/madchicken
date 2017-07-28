@@ -152,8 +152,22 @@ $result = $db->query($sql);
                 <option <?php echo $searchCategory=='content'?'selected="selected"':null?> value="content">content</option>
                 <option <?php echo $searchCategory=='writer'?'selected="selected"':null?> value="writer">writer</option>
             </select>
-            <input type="text" name="searchText" value="<?php echo isset($searchText)?$searchText:null?>">
-            <button type="submit">search</button>
+            <input type="text" style="
+    border: 2px solid #333f50;
+    padding-bottom: 7px;
+"name="searchText" value="<?php echo isset($searchText)?$searchText:null?>">
+            <button type="submit" style="
+    font-size: small;
+    background-color: #333f50;
+    color: white;
+    text-decoration: none;
+    -webkit-appearance: none;
+    padding: 12px 25px 15px 25px;
+    border-radius: 7px;
+    line-height: 0;
+    margin-top: 10px;
+    border: 3px solid #333f50;
+">검색</button>
         </form>
     </div>
     </div>
