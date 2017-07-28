@@ -1,5 +1,5 @@
 <?php
-require_once("./board/dbconfig.php");
+require_once("./dbconfig.php");
 
 $id = $_GET["id"];
 
