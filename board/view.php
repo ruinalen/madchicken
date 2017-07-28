@@ -52,7 +52,7 @@ $row = $result->fetch_assoc();
         <a href="">목록</a>
     </div>
     <div id="boardComment">
-        <?php if($_SESSION['ses_perm']==1){require_once('./comment.php')} ?>
+        <?php if($_SESSION['ses_perm']==1){require_once('./comment.php');} ?>
     </div>
 </article>
 </body>
