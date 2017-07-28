@@ -16,6 +16,7 @@ $(function(){
     var idCheck = $('.idCheck');
     var pwCheck2 = $('.pwCheck2');
     var eMailCheck = $('.eMailCheck');
+    var memberPermissionComment = $('.memberPermissionComment');
 
     memberIdCheck.click(function(){
         console.log(memberId.val());

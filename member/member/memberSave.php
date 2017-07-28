@@ -10,7 +10,17 @@
     $memberNickName = $_POST['memberNickName'];
     $memberEmailAddress = $_POST['memberEmailAddress'];
     $memberBirthDay = $_POST['memberBirthDay'];
+    $memberPermission= $_POST['memberPermission'];
 
+
+    if($memberPermission=="admin")
+    {
+        $memberPermission =  1;
+    }
+    else
+    {
+        $memberPermission = 0;
+    }
     //PHP에서 유효성 재확인
 
     //아이디 중복검사.
@@ -45,7 +55,7 @@
     }
 
     //이제부터 넣기 시작
-    $sql = "INSERT INTO member VALUES(NULL,'{$memberId}','{$memberName}','{$memberNickName}','{$memberPw}','{$memberEmailAddress}','{$memberBirthDay}');";
+    $sql = "INSERT INTO member VALUES(NULL,'{$memberId}','{$memberName}','{$memberNickName}','{$memberPw}','{$memberEmailAddress}','{$memberBirthDay}','{$memberPermission}');";
     echo $sql;
     if($dbConnect->query($sql)){
         echo '회원가입 성공';

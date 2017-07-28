@@ -16,6 +16,7 @@
 
         if ($row != null) {
             $_SESSION['ses_userid'] = $row['memberId'];
+            $_SESSION['ses_perm'] = $row['memberperm'];
             echo $_SESSION['ses_userid'].'님 안녕하세요';
             echo "<a href='./signOut.php'>로그아웃 하기</a>";
         }

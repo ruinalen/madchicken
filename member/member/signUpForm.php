@@ -61,6 +61,13 @@
                 </div>
             </div>
             <div class="line">
+                <p>가입코드</p>
+                <div class="inputArea">
+                    <input type="text" name="memberPermission" class="memberPermission" />
+                    <div class="memberPermissionComment comment"></div>
+                </div>
+            </div>
+            <div class="line">
                 <input type="submit" value="가입하기" class="submit" />
             </div>
         </form>
