@@ -3,21 +3,24 @@
     width: 60%;
 }
 tr.board_top_tr {
+    font-size: small;
     background-color: #333f50;
     color: white;
     font-weight: 500;
+    border: 8px solid #333f50;
 }
 
 .submit-btn{
 
 }
 a.btnList.btn {
+    font-size: small;
     background-color: #333f50;
     color: white;
     text-decoration: none;
     -webkit-appearance: none;
-    padding: 0px 25px 3px 25px;
-    border-radius: 11px;
+    padding: 3px 25px 3px 25px;
+    border-radius: 7px;
     line-height: 0;
     margin-top: 10px;
     border: 3px solid #333f50;
@@ -29,13 +32,13 @@ a.btnList.btn {
 }
 
 #boardList th {padding: 5px 0; border-top: 2px solid #666; border-bottom: 1px solid #666;}
-#boardList tr:hover {background: #eee;}
-#boardList td {padding: 13px 0; border-bottom: 1px solid #666;}
+#boardList tr:hover {background: #333f50;}
+#boardList td {padding: 0.3px 0; border-bottom: 1px solid #666;}
 
 #boardList .no {width: 60px; text-align: center;}
 #boardList .author {width: 100px; text-align: center;}
 #boardList .date {width: 100px; text-align: center;}
-#boardList .hit {width: 40px; text-align: center;}
+#boardList .hit {width: 70px; text-align: center;}
 
 #boardList .btnSet {
     text-align: right;
