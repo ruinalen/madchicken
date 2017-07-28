@@ -13,7 +13,7 @@ iframe {
 
 #boardList th {padding: 5px 0; border-top: 2px solid #666; border-bottom: 1px solid #666;}
 #boardList tr:hover {background: #eee;}
-tr.board_top_tr:hover {
+#boardList tr.board_top_tr:hover {
     background: #333f50!important;
 }
 #boardList td {padding: 8px 0; border-bottom: 1px solid #666;}
