@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>MAD CHICKENe</title>
-    <link rel="import" href="./head.html">
+    <link rel="import" href="head.php">
 </head>
 <body>
 <!-- 네비게이션 바 영역 -->

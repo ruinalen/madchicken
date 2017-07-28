@@ -11,3 +11,4 @@
 <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.js"></script>
 <script src="./js/swiper.js"></script>
 <script src="./js/swiper.jquery.js"></script>
+<?php include "../include/session.php"; ?>
