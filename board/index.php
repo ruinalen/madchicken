@@ -104,7 +104,7 @@ $result = $db->query($sql);
     <div id="boardList">
     <table>
         <thead>
-        <tr>
+        <tr class="board_top_tr">
             <th scope="col" class="no">NO</th>
             <th scope="col" class="title">TITLE</th>
             <th scope="col" class="author">WRITER</th>
@@ -125,7 +125,7 @@ $result = $db->query($sql);
                 $row['date'] = $date;
             }
             ?>
-            <tr class="board_top_tr">
+            <tr >
                 <td class="no"><?php echo $row['id']?></td>
                 <td class="title"><a href="./view.php?id=<?php echo $row['id'] ?>"><?php echo $row['title']?></a></td>
                 <td class="author"><?php echo $row['writer']?></td>
