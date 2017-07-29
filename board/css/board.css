@@ -3,11 +3,6 @@
     width: 90%;
 }
 
-.boardArticle {
-    width: 46%;
-    margin: 0 25% 0 25%;
-}
-
 #boardView #boardTitle {
     /* border-bottom: 2px solid #333; */
     background-color: #333f50;
