@@ -88,8 +88,25 @@ a.btnList.btn {
 #boardWrite .btnSet {text-align: center;}
 
 /* 글읽기 */
-
-#boardView #boardTitle {border-bottom: 2px solid #333;}
+div#boardView {
+    border: 2px solid #333f50;
+    border-radius: 4px;
+}
+.btnSet{
+    float: right;
+}
+.custom_btn{
+    font-size: small;
+    background-color: #333f50;
+    color: white;
+    text-decoration: none;
+    -webkit-appearance: none;
+    padding: 3px 25px 3px 25px;
+    border-radius: 7px;
+    line-height: 0;
+    margin-top: 10px;
+    border: 3px solid #333f50;
+}
 #boardView #boardInfo {
     padding: 10px 0;
     border-bottom: 2px solid #333f50;

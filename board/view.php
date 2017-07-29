@@ -47,9 +47,9 @@ $row = $result->fetch_assoc();
         <div id="boardContent"><?php echo $row["content"]?></div>
     </div>
     <div class="btnSet">
-        <a href="write.php?id=<?php echo $id?>">수정</a>
-        <a href="delete.php?id=<?php echo $id?>">삭제</a>
-        <a href="">목록</a>
+        <a class="custom_btn" href="write.php?id=<?php echo $id?>">수정</a>
+        <a class="custom_btn" href="delete.php?id=<?php echo $id?>">삭제</a>
+        <a class="custom_btn" href="">목록</a>
     </div>
     <div id="boardComment">
         <?php if($_SESSION['ses_perm']==1){require_once('./comment.php');} ?>
