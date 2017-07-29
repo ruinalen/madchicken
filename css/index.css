@@ -27,7 +27,7 @@ body {
 }
 
 .title_img {
-    width: 13%;
+    width: 20%;
 }
 
 p.quotation {
@@ -6681,12 +6681,7 @@ button {
     width: 25px;
     height: 25px;
 }
-[type="checkbox"]:checked {
-    background-image: url(asset_path('nav/check.png'));
-    background-size: 15px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 /* accessibility */
 [type="checkbox"]:checked:focus + label:before, [type="checkbox"]:not(:checked):focus + label:before {
     border: 1px solid blue;
