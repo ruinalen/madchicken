@@ -146,7 +146,7 @@ $row = $result->fetch_assoc();
     $result = $db->query($sql);
     ?>
 
-    <article class="boardArticle">
+    <article class="boardViewList">
         <h3>MAD CHICKEN COMMUNITY</h3>
         <div id="boardList">
             <table>

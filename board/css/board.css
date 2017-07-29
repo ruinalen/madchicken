@@ -92,6 +92,11 @@ div#boardView {
     border: 12px solid #333f50;
     border-radius: 4px;
 }
+.boardViewList{
+    width: 100%;
+    margin: 0;
+    margin-top: 20%;
+}
 .btnSet{
     float: right;
 }
