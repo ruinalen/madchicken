@@ -80,8 +80,26 @@ a.btnList.btn {
 /* 글읽기 */
 
 #boardView #boardTitle {border-bottom: 2px solid #333;}
-#boardView #boardInfo {margin: 10px 0;}
-#boardView #boardContent {margin: 10px 0;}
+#boardView #boardInfo {
+    padding: 10px 0;
+    border-bottom: 2px solid #333f50;
+    background-color: #1d232d;
+    color: white;
+    text-align: right;
+    padding-right: 20px;
+}
+
+span#boardID {
+    float: left;
+    margin-left: 20px;
+}
+
+
+#boardView #boardContent {
+    margin: 70px 0;
+    padding-left: 20px;
+}
+
 #boardView .btnSet {text-align: right;}
 
 /* 댓글 쓰기*/
