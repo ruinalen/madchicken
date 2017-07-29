@@ -9402,9 +9402,6 @@ ul.video-playlist-list li .green-link {
     cursor: pointer;
     list-style-type: none;
 }
-#enterprise-page .section-leadership ul li img.current {
-    src: url('enterprise/avatar_spot.png') !important;
-}
 #enterprise-page .section-leadership ul li .icon {
     width: 44px;
     height: 44px;

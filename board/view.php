@@ -40,9 +40,9 @@ $row = $result->fetch_assoc();
     <div id="boardView">
         <h3 id="boardTitle"><?php echo $row['title']?></h3>
         <div id="boardInfo">
-            <span id="boardID">writer: <?php echo $row["writer"]?></span>
-            <span id="boardDate">date: <?php echo $row["date"]?></span>
-            <span id="boardHit">hit: <?php echo $row["hit"]?></span>
+            <span id="boardID">작성자: <?php echo $row["writer"]?></span>
+            <span id="boardDate">일시: <?php echo $row["date"]?></span>
+            <span id="boardHit">조회수: <?php echo $row["hit"]?></span>
         </div>
         <div id="boardContent"><?php echo $row["content"]?></div>
     </div>
