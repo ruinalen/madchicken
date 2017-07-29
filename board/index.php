@@ -93,14 +93,14 @@ $result = $db->query($sql);
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Free Board</title>
+    <title>Q&A</title>
     <link rel="stylesheet" href="./css/normalize.css"/>
     <link rel="stylesheet" href="./css/board.css"/>
     <link rel="stylesheet" href="./css/community.css"/>
 </head>
 <body>
 <article class="boardArticle">
-    <h3>MAD CHICKEN COMMUNITY</h3>
+    <h3>Q&A</h3>
     <div id="boardList">
         <table>
             <thead>

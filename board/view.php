@@ -36,7 +36,7 @@ $row = $result->fetch_assoc();
 </head>
 <body>
 <article class="boardArticle">
-    <h3>Free Board</h3>
+    <h3>Q&A</h3>
     <div id="boardView">
         <h3 id="boardTitle"><?php echo $row['title']?></h3>
         <div id="boardInfo">
