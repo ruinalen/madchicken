@@ -25,7 +25,7 @@ if (isset($id))
 <article class="boardArticle">
     <h3>Free Board</h3>
     <div id="boardWrite">
-        <form action="~/board/write_update.php" method="post">
+        <form action="/board/write_update.php" method="post">
             <?php
             if(isset($id)) {
                 echo '<input type="hidden" name="id" value="' . $id . '">';
