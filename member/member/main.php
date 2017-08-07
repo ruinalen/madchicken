@@ -13,7 +13,6 @@
         <h1 class="title">어서오세요.</h1>
         <form name="singIn" action="./signIn.php" method="post" onsubmit="return checkSubmit()">
             <div class="line">
-                <p>아이디</p>
                 <div class="inputArea">
                     <input autocomplete="new-password"  type="text" name="memberId" class="memberId" />
                 </div>
