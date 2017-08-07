@@ -23,8 +23,7 @@
         }
 
         if($row == null){
-            echo '로그인 실패 아이디와 비밀번호가 일치하지 않습니다.';
-        }
+            echo '<script> history.back();</script>';}
 ?>
 
 
