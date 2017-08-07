@@ -14,4 +14,5 @@ iframe#board_frame {
     margin-bottom: 5%;
     background-blend-mode: multiply;
     background-image: url(../img/UAV-1.jpg);
+    background-color: rgba(0, 0, 0, 0.77);
 }

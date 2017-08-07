@@ -10,7 +10,7 @@
 <body>
 <div id="wrap">
     <div id="container">
-        <h1 class="title">어서오세요<br>MAD CHICKEN 입니다</h1>
+        <h1 class="title">로그인</h1>
         <form name="singIn" action="./signIn.php" method="post" onsubmit="return checkSubmit()">
             <div class="line">
                 <div class="inputArea">
