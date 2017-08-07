@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../css/mySignInForm.css" />
     <script type="text/javascript">
 
+        var myTimer = setTimeout(function() {
+        }, 3000);
+
+        clearTimeout(myTimer);
         $(document).ready(function () {
             // Handler for .ready() called.
             $('html, body').animate({
