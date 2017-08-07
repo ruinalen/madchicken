@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>MAD CHICKENe</title>
+    <title>MAD CHICKEN</title>
     <link rel="stylesheet" href="./css/login.css">
     <link rel="import" href="head.php">
 </head>
@@ -11,14 +11,17 @@
     <script>
         $(function(){
             $("header").load("./header.html");
-            $('html, body').animate({
-                scrollTop: $('#login').offset().top
-            }, 'slow');
+
         });
     </script>
 
 </header>
 <!-- 메인 섹션 영역 -->
+<script>
+    $('html, body').animate({
+        scrollTop: $('#login').offset().top
+    }, 'slow');
+</script>
 <section id="login">
     <iframe id="board_frame" src="member/member/main.php" scrolling="no">
     </iframe>
