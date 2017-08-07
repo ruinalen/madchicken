@@ -7,7 +7,13 @@
     <script type="text/javascript" src="../js/mySignInForm.js"></script>
     <link rel="stylesheet" href="../css/mySignInForm.css" />
     <script>
-        window.onload = function() {document.getElementById("container").scrollIntoView();}
+
+
+        window.onload = function() {
+            $('html, body').animate({
+            scrollTop: $('#login').offset().top
+            }, 'slow');
+        }
     </script>
 </head>
 <body>
