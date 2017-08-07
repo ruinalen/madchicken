@@ -15,13 +15,12 @@
             <div class="line">
                 <p>아이디</p>
                 <div class="inputArea">
-                    <input type="text" name="memberId" class="memberId"  autocomplete=off />
+                    <input autocomplete="new-password"  type="text" name="memberId" class="memberId" />
                 </div>
             </div>
             <div class="line">
-                <p>비밀번호</p>
                 <div class="inputArea">
-                    <input type="password" name="memberPw" class="memberPw"  autocomplete=off />
+                    <input autocomplete="new-password"  type="password" name="memberPw" class="memberPw"  autocomplete=off />
                 </div>
             </div>
             <div class="line">
