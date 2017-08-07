@@ -3,9 +3,9 @@
 /* css reset */
 div,span,body{margin:0;padding:0}
 
-#wrap{clear:both;float:left;width:100%;background:white}
+#wrap{clear:both;float:left;width:100%;background:transparent}
 #container{clear:both;width:800px;_border:1px solid #fff;margin:3% auto}
-#container h1{clear:both;float:left;width:100%;text-align:center;color:#333f50}
+#container h1{clear:both;float:left;width:100%;text-align:center;color:white}
 #container h1 a {
     color: #fff;
     padding: 1.5% 3%;
@@ -29,6 +29,7 @@ div,span,body{margin:0;padding:0}
 }
 .line .inputArea input {
     float: left;
+    background-color: rgba(255, 255, 255, 0.56);
     border: 10px solid #333f50;
     width: 380px;
     text-align: center;

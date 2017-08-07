@@ -8,8 +8,10 @@ iframe#board_frame {
 #login {
     width: 100%;
     height: 120%;
-    margin-top: 8%;
+    margin-top: 0%;
+    padding-top: 8%;
     padding-bottom: 3%;
     margin-bottom: 5%;
-    background-image: url("../img/UAV-1.jpg");
+    background-blend-mode: multiply;
+    background-image: url(../img/UAV-1.jpg);
 }
