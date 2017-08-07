@@ -2,10 +2,13 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" />
-    <title>에버디벨 :: 메인</title>
+    <title>로그인</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js" ></script>
     <script type="text/javascript" src="../js/mySignInForm.js"></script>
     <link rel="stylesheet" href="../css/mySignInForm.css" />
+    <script>
+        window.onload = function() {document.getElementById("container").scrollIntoView();}
+    </script>
 </head>
 <body>
 <div id="wrap">
