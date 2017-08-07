@@ -11,8 +11,12 @@
     <script>
         $(function(){
             $("header").load("./header.html");
+            $('html, body').animate({
+                scrollTop: $('#login').offset().top
+            }, 'slow');
         });
     </script>
+
 </header>
 <!-- 메인 섹션 영역 -->
 <section id="login">
