@@ -25,17 +25,17 @@ if (isset($id))
 <article class="boardArticle">
     <h3>Free Board</h3>
     <div id="boardWrite">
-        <form action="./write_update.php" method="post">
+        <form action="./write_update.php" method="post" enctype="multipart/form-data">
             <?php
             if(isset($id)) {
                 echo '<input type="hidden" name="id" value="' . $id . '">';
             }
             ?>
             <table id="boardWrite">
-                <caption class="readHide">Free Board</caption>
+                <caption class="readHide">Q&A</caption>
                 <tbody>
                 <tr>
-                    <th scope="row"><label for="id">writer</label></th>
+                    <th scope="row"><label for="id">WRITER</label></th>
                     <td class="writer">
                     <?php
                     if(isset($id)) {
@@ -45,19 +45,24 @@ if (isset($id))
                     <?php } ?>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="password">password</label></th>
+                    <th scope="row"><label for="password">PASSWORD</label></th>
                     <td class="password"><input type="text" name="password" id="password"></td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="title">title</label></th>
+                    <th scope="row"><label for="title">TITLE</label></th>
                     <td class="title"><input type="text" name="title" id="title"
                                              value="<?php echo isset($row["title"])?$row["title"]:null?>"></td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="content">contents</label></th>
+                    <th scope="row"><label for="content">CONTENTS</label></th>
                     <td class="content">
                         <textarea name="content" id="content"><?php echo isset($row['content'])?$row['content']:null?></textarea>
                     </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="title">FILE</label></th>
+                    <td class="title"><input type="file" name="title" id="file"
+                                             value="<?php echo isset($row["file"])?$row["file"]:null?>"></td>
                 </tr>
                 </tbody>
             </table>
