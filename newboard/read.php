@@ -92,10 +92,10 @@ $row=mysqli_fetch_array($result);
 </table><?
 		}
 
-	$query=mysqli_query("select max(thread) from $board where thread > " . ($row[thread]-100000) . " and thread < $row[thread]", $conn);
+	$query=mysqli_query($conn,"select max(thread) from $board where thread > " . ($row[thread]-100000) . " and thread < $row[thread]");
 	$next_thread=mysqli_fetch_row($query);
 
-	$query=mysqli_query("select title,name,id from $board where thread = '$next_thread[0]'", $conn);
+	$query=mysqli_query($conn,"select title,name,id from $board where thread = '$next_thread[0]'");
 	$next_id=mysqli_fetch_array($query);
 
 		if ($next_id[id])
