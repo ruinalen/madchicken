@@ -75,7 +75,7 @@ $row=mysqli_fetch_array($result);
 <?
 	
 	//  현재 글보다 id 값이 큰 글 중 가장 작은 것을 가져온다. 즉 바로 이전 글
-	$query=mysqli_query("select title,name,id from $board where thread > $row[thread] and depth=0 limit 1", $conn);
+	$query=mysqli_query($conn,"select title,name,id from $board where thread > $row[thread] and depth=0 limit 1");
 	$prev_id=mysqli_fetch_array($query);
 
 		if ($prev_id[id]) // 이전 글이 있을 경우
@@ -117,7 +117,7 @@ $row=mysqli_fetch_array($result);
 $thread_end = ceil($row[thread]/1000)*1000;
 $thread_start = (ceil($row[thread]/1000)-1)*1000;
 $query = "select * from $board where thread <= $thread_end and thread > $thread_start order by thread desc";
-$result = mysqli_query($query, $conn);
+$result = mysqli_query($conn,$query);
 ?>
 <!-- 게시물 리스트를 보이기 위한 테이블 -->
 <table width=580 border=0  cellpadding=2 cellspacing=1 bgcolor=#777777>
