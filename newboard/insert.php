@@ -23,6 +23,6 @@ setCookie("Form_name",$_POST[name],99999999999,"/");
 setCookie("Form_pass",$_POST[pass],99999999999,"/");
 
  // 새 글 쓰기인 경우 리스트로..
-echo ("<meta http-equiv='Refresh' content='0; URL=list.php'>");
+//echo ("<meta http-equiv='Refresh' content='0; URL=list.php'>");
 
 ?>
