@@ -34,7 +34,7 @@ if (isset($id)) {
 } else {
     $sql = "insert into board (id, title, content, date, hit, writer, password,myfile) 
     values(null, '$title', '$content', '$date', 0, '$writer', password('$password')),'' ||
-     '$name'";
+     '$filename'";
     $msgState = "create";
 }
 
