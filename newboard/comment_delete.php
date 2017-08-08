@@ -4,7 +4,7 @@ include "db_info.php";
 // 코멘트 출력
 $sql = " select count(*) from comment where id = '$id' and pass='$passwd'";
 $result = mysqli_query($sql,$conn);
-$row = mysql_fetch_row($result);
+$row = mysqli_fetch_row($result);
 
 if ($row[0] = 0) { 
 ?>			

@@ -1,7 +1,7 @@
 ﻿<? 
 	include "db_info.php";
 	$select_parent = mysqli_query("select thread,depth,title,comment from $board where id='$_GET[id]'",$conn);
-	$parent_fetch = mysql_fetch_row($select_parent);
+	$parent_fetch = mysqli_fetch_row($select_parent);
 	$parent_thread = $parent_fetch[0];
 	$parent_depth = $parent_fetch[1];
 	$parent_title = $parent_fetch[2];

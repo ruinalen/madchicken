@@ -7,7 +7,7 @@ include "library.php";
 //새글인 경우
 //현재 글에서 가장 큰 값을 가져온다.
 $max_thread_result = mysqli_query("select max(thread) from $board",$conn);
-$max_thread_fetch = mysql_fetch_row($max_thread_result);
+$max_thread_fetch = mysqli_fetch_row($max_thread_result);
 $max_thread = ceil($max_thread_fetch[0]/1000)*1000+1000;
 
 //업로드 파일이 있으면 업로드 함수 호출 50*1024는 파일크기 제한 즉, 50KB이상은 업로드 불가
