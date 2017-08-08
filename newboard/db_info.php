@@ -2,7 +2,6 @@
 
 $board="threadboard";
 
-$conn=mysqli_connect("localhost","root","rtemd513");
-mysqli_select_db("madchicken", $conn);
+$conn = new mysqli('localhost', 'root', 'rtemd513', 'madchicken');
 
 ?>
