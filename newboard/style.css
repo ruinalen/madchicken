@@ -1,0 +1,9 @@
+﻿<!--
+   @font-face { font-family: 티티체; src: url('ttche.eot'); }
+   
+    td  { font-size : 9pt; font-family: 티티체;   }
+	input,textarea,select,option { background:f3f3f3;font-size : 9pt; font-family: 티티체;BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid   }
+	A:link  { color : black; 	text-decoration : none;font-size : 9pt;  }
+    A:visited  {   text-decoration : none; color : black;	font-size : 9pt;  }
+    A:hover  { 	text-decoration : none; color : FF00FF; font-size : 9pt;  }
+-->
