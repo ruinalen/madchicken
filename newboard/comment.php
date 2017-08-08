@@ -42,9 +42,9 @@ function CheckStr(strOriginal, strFind, strChange){
 </script>
 <?
     $sql_cmt = " select id,name,comment,ip,DATE_FORMAT(wdate,'%Y-%m-%d') as date from comment where bid = '$id'";
-    $result_cmt = mysql_query($sql_cmt,$conn);
+    $result_cmt = mysqli_query($sql_cmt,$conn);
 
-	while($row_cmt=mysql_fetch_array($result_cmt)) {
+	while($row_cmt=mysqli_fetch_array($result_cmt)) {
         $str = $row_cmt[comment];
         $comment = strip_tags($str,"");
 		$str = $row_cmt[name];

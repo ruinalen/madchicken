@@ -19,7 +19,7 @@ else
 	$prev_parent_thread = $parent_thread - 1000;
 
 //원본글보다는 작고 위값보다는 큰 글들의 thread 값을 모두 1씩 낮춘다.
-$update_thread = mysql_query("update $board set thread=thread-1 where thread > $prev_parent_thread and thread < $parent_thread ",$conn);
+$update_thread = mysqli_query("update $board set thread=thread-1 where thread > $prev_parent_thread and thread < $parent_thread ",$conn);
 
 //업로드 파일이 있으면 업로드 함수 호출 50*1024는 파일크기 제한 즉, 50KB이상은 업로드 불가
 if ($HTTP_POST_FILES[upfile][name]) $filename=upload($HTTP_POST_FILES[upfile],50*1024);
@@ -30,7 +30,7 @@ if ($HTTP_POST_FILES[upfile][name]) $filename=upload($HTTP_POST_FILES[upfile],50
 $query = "insert into $board (id,thread,depth,name,pass,email,title,see,wdate,ip,comment,filename) values ('','" . ($parent_thread-1) . "'";
 $query .= ",'" . ($parent_depth+1) ."','$_POST[name]','$_POST[pass]','$_POST[email]','$_POST[title]',0,";
 $query .= time() . ",'$REMOTE_ADDR','$_POST[comment]','$filename')";
-$result=mysql_query($query, $conn);
+$result=mysqli_query($query, $conn);
 
 //데이터베이스와의 연결 종료
 mysql_close($conn);

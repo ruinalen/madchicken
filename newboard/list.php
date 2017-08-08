@@ -26,13 +26,13 @@ if ($_GET[search_word]!="") $add_query = " where $_GET[field] like '%" . $_GET[s
 $query = "select * from $board ";
 $query .= $add_query;
 $query .= " order by thread desc limit $_GET[no],$page_size";
-$result = mysql_query($query, $conn);
+$result = mysqli_query($query, $conn);
 
 // 총 게시물 수 를 구한다.
 //count 를 통해 구할 수 있는데 count(항목) 과 같은 방법으로 사용한다. * 는 모든 항목을 뜻한다.
 //총 해당 항목의 값을 가지는 게시물의 개수가 얼마인가를 묻는것이다.
 //따라서 전체 글수가 된다. count(id) 와 같은 방법도 가능하지만 이례적으로 count(*)가 조금 빠르다. 일반적으로는 * 가 느리다.
-$result_count=mysql_query("select count(*) from $board " . $add_query , $conn);
+$result_count=mysqli_query("select count(*) from $board " . $add_query , $conn);
 $result_row=mysql_fetch_row($result_count);
 $total_row = $result_row[0]; 
 //결과의 첫번째 열이 count(*) 의 결과다.
@@ -113,7 +113,7 @@ $current_page = floor($_GET[no]/$page_size);
 <!-- 리스트 타이틀 끝 -->
 <!-- 리스트 부분 시작 -->
 <?
-while($row=mysql_fetch_array($result))
+while($row=mysqli_fetch_array($result))
 {
 
 ?>

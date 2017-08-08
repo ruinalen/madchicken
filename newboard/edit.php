@@ -24,8 +24,8 @@
 include "db_info.php";
 
 // 먼저 쓴 글의 정보를 가져온다.
-$result=mysql_query("select id,name,email,title,comment,ip,filename from $board where id=$_GET[id]", $conn);
-$row=mysql_fetch_array($result);
+$result=mysqli_query("select id,name,email,title,comment,ip,filename from $board where id=$_GET[id]", $conn);
+$row=mysqli_fetch_array($result);
 ?>
 
 <!-- 입력 부분 -->

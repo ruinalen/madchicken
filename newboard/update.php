@@ -5,8 +5,8 @@ include "db_info.php";
 include "library.php";
 
 // 글의 비밀번호를 가져온다.
-$result=mysql_query("select pass,filename from $board where id='$_GET[id]'", $conn);
-$row=mysql_fetch_array($result);
+$result=mysqli_query("select pass,filename from $board where id='$_GET[id]'", $conn);
+$row=mysqli_fetch_array($result);
 
 //입력된 값과 비교한다.
 if ($_POST[pass]==$row[pass]) { //비밀번호가 일치하는 경우
@@ -23,7 +23,7 @@ if ($_POST[pass]==$row[pass]) { //비밀번호가 일치하는 경우
 	$query = "update $board set name='$_POST[name]',title='$_POST[title]',email='$_POST[email]',comment='$_POST[comment]'";
 	$query .= $add_query;
 	$query .= "where id='$_GET[id]' ";
-	 $result=mysql_query($query, $conn);
+	 $result=mysqli_query($query, $conn);
 } 
 else { // 비밀번호가 일치하지 않는 경우
 	echo ("

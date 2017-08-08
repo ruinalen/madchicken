@@ -12,11 +12,11 @@
 include "db_info.php";
 
 // 조회수 업데이트
-$result=mysql_query("update $board set see=see+1 where id=$_GET[id]", $conn);
+$result=mysqli_query("update $board set see=see+1 where id=$_GET[id]", $conn);
 
 // 글 정보 가져오기
-$result=mysql_query("select * from $board where id=$_GET[id]", $conn);
-$row=mysql_fetch_array($result);
+$result=mysqli_query("select * from $board where id=$_GET[id]", $conn);
+$row=mysqli_fetch_array($result);
 
 ?>
 
@@ -75,8 +75,8 @@ $row=mysql_fetch_array($result);
 <?
 	
 	//  현재 글보다 id 값이 큰 글 중 가장 작은 것을 가져온다. 즉 바로 이전 글
-	$query=mysql_query("select title,name,id from $board where thread > $row[thread] and depth=0 limit 1", $conn);
-	$prev_id=mysql_fetch_array($query);
+	$query=mysqli_query("select title,name,id from $board where thread > $row[thread] and depth=0 limit 1", $conn);
+	$prev_id=mysqli_fetch_array($query);
 
 		if ($prev_id[id]) // 이전 글이 있을 경우
 		{
@@ -92,11 +92,11 @@ $row=mysql_fetch_array($result);
 </table><?
 		}
 
-	$query=mysql_query("select max(thread) from $board where thread > " . ($row[thread]-100000) . " and thread < $row[thread]", $conn);
+	$query=mysqli_query("select max(thread) from $board where thread > " . ($row[thread]-100000) . " and thread < $row[thread]", $conn);
 	$next_thread=mysql_fetch_row($query);
 
-	$query=mysql_query("select title,name,id from $board where thread = '$next_thread[0]'", $conn);
-	$next_id=mysql_fetch_array($query);
+	$query=mysqli_query("select title,name,id from $board where thread = '$next_thread[0]'", $conn);
+	$next_id=mysqli_fetch_array($query);
 
 		if ($next_id[id])
 		{
@@ -117,7 +117,7 @@ $row=mysql_fetch_array($result);
 $thread_end = ceil($row[thread]/1000)*1000;
 $thread_start = (ceil($row[thread]/1000)-1)*1000;
 $query = "select * from $board where thread <= $thread_end and thread > $thread_start order by thread desc";
-$result = mysql_query($query, $conn);
+$result = mysqli_query($query, $conn);
 ?>
 <!-- 게시물 리스트를 보이기 위한 테이블 -->
 <table width=580 border=0  cellpadding=2 cellspacing=1 bgcolor=#777777>
@@ -142,7 +142,7 @@ $result = mysql_query($query, $conn);
 <!-- 리스트 타이틀 끝 -->
 <!-- 리스트 부분 시작 -->
 <?
-while($row=mysql_fetch_array($result))
+while($row=mysqli_fetch_array($result))
 {
 
 ?>
