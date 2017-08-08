@@ -57,10 +57,10 @@ $nextPage = (($currentSection + 1) * ONE_SECTION) - (ONE_SECTION - 1);
 $paging = "<ul>";
 
 if ($page != 1) {
-    $paging .= '<li class="page page_start"><a style="text-decoration: none; color: white" href="./index.php?page=1' . $subString . '">first</a></li>';
+    $paging .= '<li class="page page_start"><a style="text-decoration: none; color: white" href="./index.php?page=1' . $subString . '">FIRST</a></li>';
 }
 if ($currentSection != 1) {
-    $paging .= '<li class="page page_prev"><a style="text-decoration: none; color: white" href="./index.php?page=' . $prevPage . $subString . '">prev</a></li>';
+    $paging .= '<li class="page page_prev"><a style="text-decoration: none; color: white" href="./index.php?page=' . $prevPage . $subString . '">PREV</a></li>';
 }
 
 for ($i = $firstPage; $i <= $lastPage; $i++) {
@@ -73,12 +73,12 @@ for ($i = $firstPage; $i <= $lastPage; $i++) {
 }
 
 if ($currentSection != $allSection) {
-    $paging .= '<li class="page page_next"><a style="text-decoration: none; color: white" href="./index.php?page=' . $nextPage . $subString . '">next</a></li>';
+    $paging .= '<li class="page page_next"><a style="text-decoration: none; color: white" href="./index.php?page=' . $nextPage . $subString . '">NEXT</a></li>';
 
 }
 
 if ($page != $allPage) {
-    $paging .= '<li class="page page_end"><a style="text-decoration: none; color: white" href="./index.php?page=' . $allPage . $subString . '">last</a></li>';
+    $paging .= '<li class="page page_end"><a style="text-decoration: none; color: white" href="./index.php?page=' . $allPage . $subString . '">LAST</a></li>';
 
 }
 $paging .= '</ul>';
