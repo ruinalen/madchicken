@@ -56,13 +56,19 @@ a.btnList.btn {
 }
 
 #boardList .paging {text-align: center;}
-#boardList .paging li {display: inline-block; height: 20px; margin: 0 5px; padding: 0 5px; border: 1px solid #666; background: #eee; line-height: 21px;}
+#boardList .paging li {
+    background: #4e5f78;
+    line-height: 1.2;
+    border-bottom: 3px solid #4e5f78;
+    border-top: 3px solid #4e5f78;
+    border-left: 6px solid #4e5f78;
+    border-right: 6px solid #4e5f78;
+}
 
 #boardList .paging li.current,
 #boardList .paging li:hover {background: #666;}
 #boardList .paging li.current, #boardList .paging li:hover {
     background: #333f50;
-    border-radius: 8PX;
     line-height: 1.2;
     border-bottom: 3px solid #333f50;
     border-top: 3px solid #333f50;
