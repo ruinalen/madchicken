@@ -102,7 +102,7 @@ if (isset($id))
                 </tr>
                 <tr>
                     <th scope="row"><label for="title">FILE</label></th>
-                    <td class="title"><input type="myfile" name="myfile" id="myfile"
+                    <td class="title"><input type="file" name="myfile" id="myfile"
                                              value="<?php echo isset($row["myfile"])?$row["myfile"]:null?>"></td>
                 </tr>
                 </tbody>
