@@ -26,7 +26,7 @@ if ($_GET[search_word]!="") $add_query = " where $_GET[field] like '%" . $_GET[s
 $query = "select * from $board ";
 $query .= $add_query;
 $query .= " order by thread desc limit $_GET[no],$page_size";
-$result = mysqli_query($query, $conn);
+$result = mysqli_query($conn, $query);
 
 // 총 게시물 수 를 구한다.
 //count 를 통해 구할 수 있는데 count(항목) 과 같은 방법으로 사용한다. * 는 모든 항목을 뜻한다.
@@ -34,7 +34,7 @@ $result = mysqli_query($query, $conn);
 //따라서 전체 글수가 된다. count(id) 와 같은 방법도 가능하지만 이례적으로 count(*)가 조금 빠르다. 일반적으로는 * 가 느리다.
 $result_count=mysqli_query("select count(*) from $board " . $add_query , $conn);
 $result_row=mysqli_fetch_row($result_count);
-$total_row = $result_row[0]; 
+$total_row = $result_row[0];
 //결과의 첫번째 열이 count(*) 의 결과다.
 
 #########################################################################
@@ -76,13 +76,13 @@ $current_page = floor($_GET[no]/$page_size);
 <style>
 <!--
    @font-face { font-family: 티티체; src: url('ttche.eot'); }
-   
+
     td,input  { font-size : 9pt; font-family: 티티체;   }
-	textarea,select,option,button { background:f3f3f3;font-size : 9pt; font-family: 티티체;BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid   }
+	textarea,select,option,button { background:#f3f3f3;font-size : 9pt; font-family: 티티체;BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid   }
     .search { font-size : 9pt; font-family: 티티체; }
 	A:link  { color : black; 	text-decoration : none;font-size : 9pt;  }
     A:visited  {   text-decoration : none; color : black;	font-size : 9pt;  }
-    A:hover  { 	text-decoration : none; color : FF00FF; font-size : 9pt;  }
+    A:hover  { 	text-decoration : none; color : #FF00FF; font-size : 9pt;  }
 -->
 </style>
 </head>
@@ -102,18 +102,18 @@ $current_page = floor($_GET[no]/$page_size);
 	</td>
 	<td width=50 align=center>
 		<font color=white>글쓴이</font>
-	</td>		
+	</td>
 	<td width=80 align=center>
 		<font color=white>날 짜</font>
 	</td>
 	<td width=40 align=center>
 		<font  color=white>조회수</font>
-	</td> 	
+	</td>
 </tr>
 <!-- 리스트 타이틀 끝 -->
 <!-- 리스트 부분 시작 -->
 <?
-while($row=mysqli_fetch_array($result))
+while($row=mysql_fetch_array($result))
 {
 
 ?>
@@ -155,7 +155,7 @@ while($row=mysqli_fetch_array($result))
 } // end While
 
 //데이터베이스와의 연결을 끝는다.
-mysqli_close($conn);
+mysql_close($conn);
 ?>
 </table>
 <!-- 게시물 리스트를 보이기 위한 테이블 끝-->
