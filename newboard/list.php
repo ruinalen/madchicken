@@ -70,7 +70,7 @@ $current_page = floor($_GET[no]/$page_size);
 # 그러나 내림을 하는 이유는 $_GET[no] 값에 11과 같은 값이 들어와도 제대로 출력되기를 바라는 마음에서 해놓은것이다.
 ?>
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 <title>계층형 게시판</title>
 <style>
@@ -245,7 +245,7 @@ if($total_page > $end_page)
 <option value=name >글쓴이</option>   
 </select><input type=text name=search_word size=20><input type=submit value="검색">
 </td>
-<td align=right><button onclick="location.href='./write.php'" style="cursor:hand">글 쓰 기</button></td>
+    <td align=right><a href="write.php"><button  onclick="location.href='./write.php'" style="cursor:hand"> 글 쓰 기</button></a></td>
 </form>
 </tr>
 <tr>
