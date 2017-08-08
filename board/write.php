@@ -2,7 +2,6 @@
 require_once("./dbconfig.php");
 
 $uploads_dir = "uploads/";
-$allowed_ext = array('jpg','jpeg','png','gif');
 
 // 변수 정리
 $error = $_FILES['myfile']['error'];
@@ -22,12 +21,6 @@ if( $error != UPLOAD_ERR_OK ) {
         default:
             echo "파일이 제대로 업로드되지 않았습니다. ($error)";
     }
-    exit;
-}
-
-// 확장자 확인
-if( !in_array($ext, $allowed_ext) ) {
-    echo "허용되지 않는 확장자입니다.";
     exit;
 }
 
