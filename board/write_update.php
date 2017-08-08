@@ -11,6 +11,7 @@ if (isset($_POST["id"])) {
 $password = $_POST["password"];
 $title = $_POST["title"];
 $content = $_POST["content"];
+$filename = $_POST["name"];
 
 if (isset($id)) {
     $sql = "select count(password) as cnt from board where password = password('$password') and id = '$id'";
@@ -31,8 +32,9 @@ if (isset($id)) {
         exit;
     }
 } else {
-    $sql = "insert into board (id, title, content, date, hit, writer, password) 
-    values(null, '$title', '$content', '$date', 0, '$writer', password('$password'))";
+    $sql = "insert into board (id, title, content, date, hit, writer, password,myfile) 
+    values(null, '$title', '$content', '$date', 0, '$writer', password('$password')),'' ||
+     '$name'";
     $msgState = "create";
 }
 

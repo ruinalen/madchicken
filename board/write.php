@@ -1,7 +1,7 @@
 <?php
 require_once("./dbconfig.php");
 
-$uploads_dir = "uploads/";
+$uploads_dir = "./uploads/";
 
 // 변수 정리
 $error = $_FILES['myfile']['error'];
