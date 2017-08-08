@@ -245,7 +245,7 @@ if($total_page > $end_page)
 <option value=name >글쓴이</option>   
 </select><input type=text name=search_word size=20><input type=submit value="검색">
 </td>
-<td align=right><button onclick="location.href='write.php'" style="cursor:hand">글 쓰 기</button></td>
+<td align=right><button onclick="location.href='./write.php'" style="cursor:hand">글 쓰 기</button></td>
 </form>
 </tr>
 <tr>
