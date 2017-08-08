@@ -179,7 +179,7 @@ while($row=mysqli_fetch_array($result))
 <!-- 행 끝 -->
 <?
 } // end While
-mysql_close($conn);
+mysqli_close($conn);
 ?>
 
 </center>

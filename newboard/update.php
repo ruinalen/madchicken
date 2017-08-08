@@ -36,7 +36,7 @@ else { // 비밀번호가 일치하지 않는 경우
 }
 
 //데이터베이스와의 연결 종료
-mysql_close($conn);
+mysqli_close($conn);
 
 //수정하기인 경우 수정된 글로..
 echo ("<meta http-equiv='Refresh' content='0; URL=read.php?id=$_GET[id]'>");

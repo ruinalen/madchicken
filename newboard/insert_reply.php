@@ -33,7 +33,7 @@ $query .= time() . ",'$REMOTE_ADDR','$_POST[comment]','$filename')";
 $result=mysqli_query($query, $conn);
 
 //데이터베이스와의 연결 종료
-mysql_close($conn);
+mysqli_close($conn);
 
 setCookie("Form_name",$_POST[name],99999999999,"/");
 setCookie("Form_pass",$_POST[pass],99999999999,"/");
