@@ -155,7 +155,7 @@ while($row=mysqli_fetch_array($result))
 } // end While
 
 //데이터베이스와의 연결을 끝는다.
-mysql_close($conn);
+mysqli_close($conn);
 ?>
 </table>
 <!-- 게시물 리스트를 보이기 위한 테이블 끝-->
