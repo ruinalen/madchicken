@@ -12,10 +12,10 @@
 include "db_info.php";
 
 // 조회수 업데이트
-$result=mysqli_query("update $board set see=see+1 where id=$_GET[id]", $conn);
+$result=mysqli_query($conn,"update $board set see=see+1 where id=$_GET[id]");
 
 // 글 정보 가져오기
-$result=mysqli_query("select * from $board where id=$_GET[id]", $conn);
+$result=mysqli_query($conn,"select * from $board where id=$_GET[id]");
 $row=mysqli_fetch_array($result);
 
 ?>
