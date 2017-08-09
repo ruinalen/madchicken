@@ -38,7 +38,6 @@
 					return $file_name_db;
 			} else {
 					@unlink($file['tmp_name']);
-					MsgBox($file_name_db);
 					MsgBox("업로드 과정에서 에러가 발생하였습니다.");
 			}
 	}
