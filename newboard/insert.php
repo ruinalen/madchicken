@@ -13,8 +13,7 @@ $max_thread = ceil($max_thread_fetch[0]/1000)*1000+1000;
 //업로드 파일이 있으면 업로드 함수 호출 50*1024는 파일크기 제한 즉, 50KB이상은 업로드 불가
 if ($HTTP_POST_FILES[upfile][name]) $filename=upload($HTTP_POST_FILES[upfile],50*1024);
 
-$query = "insert into $board values ('',$max_thread,0,'$_POST[name]','$_POST[pass]','$_POST[email]','$_POST[title]',0," . time() . ",'$REMOTE_ADDR','$_POST[comment]',0,'$filename')";
-insert into threadboard values (0,1000,0,'aaa','aaa','aaa','aaa','0',1502169830,'',0,'',0)
+$query = "insert into $board values (0,$max_thread,0,'$_POST[name]','$_POST[pass]','$_POST[email]','$_POST[title]','0',". time() .",'', '$_POST[comment]','$filename',0)";
 echo $query;
 $result=mysqli_query($conn,$query);
 
