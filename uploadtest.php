@@ -1,7 +1,7 @@
 <?php
 echo exec('whoami');
 if(isset($_POST['submit'])) {
-    $save_dir = "/tmp";
+    $save_dir = "/tmp/";
     //파일이 HTTP POST 방식을 통해 정상적으로 업로드되었는지 확인한다.
     if(is_uploaded_file($_FILES["upload_file"]["tmp_name"])){
         echo "업로드한 파일명 : " . $_FILES["upload_file"]["name"];
