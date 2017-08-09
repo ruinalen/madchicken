@@ -12,7 +12,7 @@ if(isset($_POST['submit'])) {
         else
             die("fail2");
     } else {
-        echo "fail1";
+        echo "fail3";
     }
 }
 ?>
