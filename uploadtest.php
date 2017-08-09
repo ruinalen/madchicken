@@ -21,5 +21,5 @@ if(isset($_POST['submit'])) {
 <form enctype="multipart/form-data" method="post"
       action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <input type="file" name="upload_file" /><br />
-    <input type="submit" value="upload" name="submit"/>
+    <input type="submit" value="upload" name="submit "/>
 </form>
