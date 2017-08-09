@@ -14,7 +14,7 @@ $max_thread = ceil($max_thread_fetch[0]/1000)*1000+1000;
 if ($HTTP_POST_FILES[upfile][name]) $filename=upload($HTTP_POST_FILES[upfile],50*1024);
 
 $query = "insert into $board values (0,$max_thread,0,'$_POST[name]','$_POST[pass]','$_POST[email]','$_POST[title]','$_POST[comment]',". time() .",'',0,'$filename',0)";
-echo $query;
+//echo $query;
 $result=mysqli_query($conn,$query);
 
 //데이터베이스와의 연결 종료
@@ -24,6 +24,6 @@ setCookie("Form_name",$_POST[name],99999999999,"/");
 setCookie("Form_pass",$_POST[pass],99999999999,"/");
 
  // 새 글 쓰기인 경우 리스트로..
-//echo ("<meta http-equiv='Refresh' content='0; URL=list.php'>");
+echo ("<meta http-equiv='Refresh' content='0; URL=list.php'>");
 
 ?>
