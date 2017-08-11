@@ -51,10 +51,9 @@ $save_dir = "/tmp";
 			$temp_name = explode('||',$file); 
 			$save_file_name = $temp_name[0];
 			$original_file_name = $temp_name[1];
-			
-			if( eregi( "\.\./|\/\/", $save_file_name ) ) MsgBox("몬때따~ 참말로 몬때따~");
 
-			if(strstr($HTTP_USER_AGENT, "MSIE 6.")) { 
+
+        if(strstr($HTTP_USER_AGENT, "MSIE 6.")) {
 					header("Content-type: application/octetstream"); 
 					header("Content-disposition: filename=$original_file_name");
 					header("Content-Length: ".filesize($save_dir.'/'.$save_file_name));
