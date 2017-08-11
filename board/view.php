@@ -1,241 +1,207 @@
-<?php
-require_once("./dbconfig.php");
-session_start();
-if ($_SESSION['ses_perm']==0){
+﻿<?
+include "lib/bm_dbconfig.php"; // DB 연결을 위한 환경 파일
+include "lib/bm_function.php"; // 사용자 정의 함수
 
-}
-$id = $_GET["id"];
-
-$isHit = !empty($id) && empty($_COOKIE["board_" . $id]);
-if ($isHit) {
-    $sql = "update board set hit = hit+1 where id =" . $id;
-    $result = $db->query($sql);
-    if (empty($result)) {
-    ?>
-        <script>
-            alert("some problem");
-            history.go(-1);
-        </script>
-    <?php
-    } else {
-        setcookie('board_' . $id, TRUE, time() + (60 * 60 * 24), '/');
-    }
+if($id == '') {
+	bm_error("게시판 이름이 지정되지 않았습니다.");
 }
 
-$sql = "select id, title, content, date, hit, writer, password from board where id=" . $id;
-$result = $db->query($sql);
-$row = $result->fetch_assoc();
+$connect = bm_dbconnect($host, $db_id, $db_passwd, $db_name); // MySQL DB 연결(사용자 정의 함수 bm_dbconnect 이용)
+$sql = "select * from multiconfig where id = '$id'" ; // 0000.php?id=xxx 와 같은 식으로 호출
+$result = mysql_query($sql) or die (mysql_error().$sql);
+$array = mysql_fetch_array($result);
+$skindir = "skin/".$array[skin]."/"; // 스킨 디렉토리
+$tablename = $id; // 테이블 이름
+$title = $array[title] ;//"다중 게시판" ;
+$head_file = $array[head_file];//게시판 상단 꾸미기
+$head = stripslashes($array[head]);
+$foot_file = $array[foot_file];//게시판 하단 꾸미기
+$foot = stripslashes($array[foot]);
+$tbwidth = $array[tbwidth];// 게시판 테이블 가로
+$tbalign = $array[tbalign];// 게시판 테이블 정렬 방식
+$background = $array[background]; // 전체 배경 그림
+$strlen = $array[strlen]; // 제목 글자수
+$simplereply_yn = $array[simplereply]; // 간단 답글 사용 유무
+
+/*
+$name = '손님'; // 사용자 아이디. 로그인하지 않은 경우 디폴트로 게스트 이름 지정
+$userid = 'guest'; // 사용자 아이디. 로그인하지 않은 경우 디폴트로 게스트 아이디 지정
+$password = 'guest'; // 사용자 패스워드. 로그인하지 않은 경우 디폴트로 게스트 비밀번호 지정
+*/
+$simplereply_id = $id."_simplereply"; // 간단한 답글 테이블 이름 지정
+if(!$HTTP_COOKIE_VARS[cook_userid]) { $guest_hide_start="<!--"; $guest_hide_end="-->"; } // 회원이 아닐 경우 가릴 때 사용
+
+if($array[authread] != '10') { // 사용자 등급이 10이 아니면, 즉 회원가입을 해야 볼 수 있다면...
+	if($HTTP_COOKIE_VARS[cook_userlevel] > $array[authread] || $HTTP_COOKIE_VARS[cook_userlevel]=='') {
+		bm_error("로그인하지 않았거나 이 게시물을 읽을 권한이 없습니다.");
+		return;
+	}
+}
+
+//테이블에서 글을 가져옵니다.
+$query = "select * from $tablename where number='$number'"; // 글 번호를 가지고 조회를 합니다.
+$result = mysql_query($query) or die (mysql_error());
+$array = mysql_fetch_array($result);
+
+$query2 = "select * from $simplereply_id where parent=$number order by number"; // 간단한 답글을 불러옴
+$result2 = mysql_query($query2) or die (mysql_error());
+// $array2 = mysql_fetch_array($result); // 스킨으로 옮김
+
+//백슬래쉬 제거, 특수문자 변환(HTML용), 개행(<br>)처리 등
+$name = stripslashes($array[name]);
+$subject = stripslashes($array[subject]);
+$memo = stripslashes($array[memo]);
+$email = $array[email];
+$homepage = $array[homepage];
+$datetime = DATE("Y-m-d H:m:s",$array[writetime]);
+
+if($array[html]!="Y") { // HTML 태그 사용 가능 여부
+	$subject = htmlspecialchars($subject);
+	$memo = htmlspecialchars($memo);
+}
+
+if($array[br]=="Y") { // 엔터 부분 <br>태그 처리
+	$memo = nl2br($memo);
+}
+
+$count = $array[count];
+
+$replyno= $array[replyno]; // 변수를 단순화하기 위해...스킨 제작땜시.
+
+// 첨부 파일이 있을 경우
+if($array[file_name1]!='') {
+	$file_size1 = round(filesize($array[file_name1])/1024,2);
+// 파일 사이즈를 KB 단위로
+	$print_filename1 = "<a href={$array[file_name1]}>{$array[s_file_name1]}</a>({$file_size1}KB)";
+	$ext = explode(".",$array[file_name1]); // 파일 이름을 . 를 기준으로 나누어 배열에 저장
+	$up_image1 = '';
+	if($ext[sizeof($ext)-1]=='jpg' || $ext[sizeof($ext)-1]=='gif' || $ext[sizeof($ext)-1]=='png') {// 첨부파일이 그림파일일 경우
+		$up_image1 = "<img src={$array[file_name1]}><br>";
+	}
+}
+if($array[file_name2]!='') {
+	$file_size2 = round(filesize($array[file_name2])/1024,2);
+// 파일 사이즈를 KB 단위로
+	$print_filename2 = "<a href={$array[file_name2]}>{$array[s_file_name2]}</a>({$file_size2}KB)";
+	$ext = explode(".",$array[file_name1]); // 파일 이름을 . 를 기준으로 나누어 배열에 저장
+	$up_image2 = '';
+	if($ext[sizeof($ext)-1]=='jpg' || $ext[sizeof($ext)-1]=='gif' || $ext[sizeof($ext)-1]=='png') {// 첨부파일이 그림파일일 경우
+		$up_image2 = "<img src={$array[file_name2]}><br>";
+	}
+}
+if($array[file_name3]!='') {
+	$file_size3 = round(filesize($array[file_name3])/1024,2);
+// 파일 사이즈를 KB 단위로
+	$print_filename3 = "<a href={$array[file_name3]}>{$array[s_file_name3]}</a>({$file_size3}KB)";
+	$ext = explode(".",$array[file_name3]); // 파일 이름을 . 를 기준으로 나누어 배열에 저장
+	$up_image3 = '';
+	if($ext[sizeof($ext)-1]=='jpg' || $ext[sizeof($ext)-1]=='gif' || $ext[sizeof($ext)-1]=='png') {// 첨부파일이 그림파일일 경우
+		$up_image3 = "<img src={$array[file_name3]}><br>";
+	}
+}
+
+// 조회수 카운터 증가
+$query = "update $tablename set count = count + 1 where number='$number'";
+mysql_query($query);
+
 ?>
-<!DOCTYPE html>
+
+<? include "copyright.txt"; // 저작권 ?>
+
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Free Board</title>
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/board.css" />
+<meta http-equiv=content-type content=text/html; charset=euc-kr>
+<title><?=$title;?></title>
+<? include $skindir."style.css"; ?>
 </head>
-<body>
-<article class="boardArticle">
-    <h3>Q&A</h3>
-    <div id="boardView">
-        <h3 id="boardTitle"><?php echo $row['title']?></h3>
-        <div id="boardInfo">
-            <span id="boardID">작성자: <?php echo $row["writer"]?></span>
-            <span id="boardDate">일시: <?php echo $row["date"]?></span>
-            <span id="boardHit">조회수: <?php echo $row["hit"]?></span>
-        </div>
-        <div id="boardContent"><?php echo $row["content"]?></div>
-    </div>
-    <div class="btnSet">
-        <a class="custom_btn" href="write.php?id=<?php echo $id?>">수정</a>
-        <a class="custom_btn" href="delete.php?id=<?php echo $id?>">삭제</a>
-        <a class="custom_btn" href="">목록</a>
-    </div>
+<body leftmargin="0" topmargin="0" background="<?=$background; ?>">
+
+<? if ($head_file != '') include $head_file ; ?>
+<? echo "$head"; ?>
+
+<?
+$a_list = "<a onfocus='blur();' href=djboard.php?id=$id&page=$page&src_name=$src_name&src_value=$src_value>";
+$a_write = "<a onfocus='blur();' href=write.php?id=$id&page=$page&src_name=$src_name&src_value=$src_value>";
+$a_modify = "<a onfocus='blur();' href=modify.php?id=$id&number=$number&page=$page&src_name=$src_name&src_value=$src_value>";
+$a_delete = "<a onfocus='blur();' href=delete.php?id=$id&number=$number&page=$page&src_name=$src_name&src_value=$src_value>";
+$a_reply = "<a onfocus='blur();' href=reply.php?id=$id&number=$number&page=$page&replyno=$replyno&src_name=$src_name&src_value=$src_value>";
+?>
+
+<table border=0 cellspacing=0 width=<?=$tbwidth;?> align=<?=$tbalign;?>>
+<tr><td>
+
+<? include $skindir."view_main.php"; // 글 내용 보여주기 스킨?>
+
+<?
+if ($simplereply_yn == "Y") { // 간단 답글 유무 체크
+?>
+
+<!-- 코멘트 보기 / 등록하기 시작 -->
+
+<script>
+	function check_comment_submit(obj) {
+		if(obj.comment.value.length<5) {
+			alert("코멘트는 5자 이상 적어주세요");
+			obj.comment.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+
+<form method=post name=write action=simplereply_ok.php onsubmit="return check_comment_submit(this)"><input type=hidden name=page value=1><input type=hidden name=id value=p_html><input type=hidden name=no value=873><input type=hidden name=select_arrange value=headnum><input type=hidden name=desc value=asc><input type=hidden name=page_num value=20><input type=hidden name=keyword value=""><input type=hidden name=category value=""><input type=hidden name=sn value="off"><input type=hidden name=ss value="on"><input type=hidden name=sc value="off"><input type=hidden name=mode value="">
+
+<input type=hidden name=simplereply_id value='<?=$simplereply_id?>'>
+<input type=hidden name=id value='<?=$id?>'>
+<input type=hidden name=page value='<?=$page?>'>
+<input type=hidden name=number value='<?=$number?>'>
+<input type=hidden name=parent value='<?=$number?>'>
+<input type=hidden name=src_name value='<?=$src_name?>'>
+<input type=hidden name=src_value value='<?=$src_value?>'>
+
+<?
+while($array2 = mysql_fetch_array($result2)) {
+	$cmt_number = $array2[number]; // 글 번호
+	$cmt_name = stripslashes($array2[name]); // 간단한 답글 내용
+	$cmt_comment = nl2br(stripslashes($array2[comment])); // 간단한 답글 내용
+	$cmt_date = date('Y-m-d',$array2[writetime]); // 글쓴 날짜
+	$cmt_time = date('H:i:s',$array2[writetime]); // 글쓴 시간
+	$a_simple_del = "<a onfocus='blur();' href=simplereply_del.php?id=$id&number=$number&page=$page&replyno=$replyno&src_name=$src_name&src_value=$src_value&cmt_number=$cmt_number>";
+	$img_del = "";
+	if($HTTP_COOKIE_VARS[cook_userid]==$array2[userid] || $HTTP_COOKIE_VARS[cook_userlevel] == '1') {
+		$img_del = "<img src=".$skindir."/delete_s.gif border=0 align=absmiddle>";
+	}
+?>
+
+<? include $skindir."view_comment.php"; // 코멘트 스킨?>
+
+<?
+} // while문 닫기
+?>
+
+<? include $skindir."view_comment_w.php"; // 코멘트 등록하기 스킨?>
+
+<!-- 코멘트 보기 / 등록하기 끝 -->
+
+<?
+} // if문 닫기(간단 답글 유무 체크)
+?>
+
+<? include $skindir."view_foot.php"; // 리스트,글쓰기 등 버튼 스킨?>
 
 
 
-    <?php
-    require_once("./dbconfig.php");
+<p align="right">
+<? include $skindir."copyright.php"; // 저작권?>
+</p>
 
-    define("ONE_PAGE_POSTS", 5);
-    define("ONE_SECTION", 5);
+</td></tr>
+</table>
 
+</form>
 
-    if (isset($_GET["page"])) {
-        $page = $_GET["page"];
-    } else {
-        $page = 1;
-    }
-    $searchCategory = "";
-    $subString = "";
-    if (isset($_GET["searchCategory"])) {
-        $searchCategory = $_GET["searchCategory"];
-        $subString .= '&amp;searchCategory=' . $searchCategory;
-    }
+<? if ($foot_file != '') include $foot_file ; ?>
+<? echo "$foot"; ?>
 
-    if (isset($_GET["searchText"])) {
-        $searchText = $_GET["searchText"];
-        $subString .= '&amp;searchText=' . $searchText;
-    }
-
-    $isValidSearchOption = isset($searchCategory) && isset($searchText);
-    $searchSql = "";
-    if ($isValidSearchOption) {
-        $searchSql = ' where ' . $searchCategory . ' like "%' . $searchText . '%"';
-    }
-
-    $sql = "select count(*) as cnt from board" . $searchSql;
-    $result = $db->query($sql);
-    $row = $result->fetch_assoc();
-
-    $allPost = $row["cnt"];
-    $allPage = ceil($allPost / ONE_PAGE_POSTS);
-
-    $isOutOfBound = (1 > $page) && $page > $allPage;
-    if ($isOutOfBound) {
-        ?>
-        <script>
-            alert("page does not exist");
-            history.go(-1);
-        </script>
-        <?php
-        exit;
-    }
-
-    $currentSection = ceil($page / ONE_SECTION);
-    $allSection = ceil($allPage / ONE_SECTION);
-    $firstPage = ($currentSection * ONE_SECTION) - (ONE_SECTION - 1);
-
-    $lastPage = ($currentSection == $allSection) ? $allPage : $currentSection * ONE_SECTION;
-    $prevPage = ($currentSection - 1) * ONE_SECTION;
-    $nextPage = (($currentSection + 1) * ONE_SECTION) - (ONE_SECTION - 1);
-
-    $paging = "<ul>";
-
-    if ($page != 1) {
-        $paging .= '<li class="page page_start"><a href="./index.php?page=1' . $subString . '">first</a></li>';
-    }
-    if ($currentSection != 1) {
-        $paging .= '<li class="page page_prev"><a href="./index.php?page=' . $prevPage . $subString . '">prev</a></li>';
-    }
-
-    for ($i = $firstPage; $i <= $lastPage; $i++) {
-        if ($i == $page) {
-            $paging .= '<li class="page current">' . $i . '</li>';
-        } else {
-            $paging .= '<li class="page"><a href="./index.php?page=' . $i . $subString . '">' . $i . '</a></li>';
-
-        }
-    }
-
-    if ($currentSection != $allSection) {
-        $paging .= '<li class="page page_next"><a href="./index.php?page=' . $nextPage . $subString . '">next</a></li>';
-
-    }
-
-    if ($page != $allPage) {
-        $paging .= '<li class="page page_end"><a href="./index.php?page=' . $allPage . $subString . '">last</a></li>';
-
-    }
-    $paging .= '</ul>';
-
-    $currentLimit = (ONE_PAGE_POSTS * $page) - ONE_PAGE_POSTS;
-    $sqlLimit = ' limit ' . $currentLimit . ', ' . ONE_PAGE_POSTS;
-
-    $sql = 'select * from board ' . $searchSql . ' order by id desc' . $sqlLimit;
-    $result = $db->query($sql);
-    ?>
-
-    <article class="boardViewList">
-        <h3>MAD CHICKEN COMMUNITY</h3>
-        <div id="boardList">
-            <table>
-                <thead>
-                <tr class="board_top_tr">
-                    <th scope="col" class="no">번호</th>
-                    <th scope="col" class="title">제목</th>
-                    <th scope="col" class="author">작성자</th>
-                    <th scope="col" class="date">날짜</th>
-                    <th scope="col" class="hit">조회수</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                while ($row = $result->fetch_assoc()) {
-                    $datetime = explode(' ', $row['date']);
-                    $date = $datetime[0];
-                    $time = $datetime[1];
-                    if ($date == Date('Y-m-d')) {
-                        $row['date'] = $time;
-                    } else {
-                        $row['date'] = $date;
-                    }
-                    ?>
-                    <tr>
-                        <td class="no"><?php echo $row['id'] ?></td>
-                        <td class="title"><a style="text-decoration: none; color: #333f50;"
-                                             href="./view.php?id=<?php echo $row['id'] ?>"><?php echo $row['title'] ?></a>
-                        </td>
-                        <td class="author"><?php echo $row['writer'] ?></td>
-                        <td class="date"><?php echo $row['date'] ?></td>
-                        <td class="hit"><?php echo $row['hit'] ?></td>
-                    </tr>
-                    <?php
-                }
-                ?>
-                </tbody>
-            </table>
-            <div class="btnSet">
-                <div class="submit-btn">
-                    <a href="./write.php" class="btnList btn">글쓰기</a>
-                </div>
-            </div>
-            <div class="paging">
-                <?php echo $paging ?>
-            </div>
-            <div class="searchBox">
-                <form action="./index.php" method="get">
-                    <select name="searchCategory" style="
-    border: 2px solid #333f50;
-    padding-bottom: 7px;
-">
-                        <option <?php echo $searchCategory == 'title' ? 'selected="selected"' : null ?> value="title">
-                            title
-                        </option>
-                        <option <?php echo $searchCategory == 'content' ? 'selected="selected"' : null ?> value="content">
-                            content
-                        </option>
-                        <option <?php echo $searchCategory == 'writer' ? 'selected="selected"' : null ?> value="writer">
-                            writer
-                        </option>
-                    </select>
-                    <input type="text" style="
-    border: 2px solid #333f50;
-    padding-bottom: 7px;
-" name="searchText" value="<?php echo isset($searchText) ? $searchText : null ?>">
-                    <button type="submit" style="
-    font-size: small;
-    background-color: #333f50;
-    color: white;
-    text-decoration: none;
-    -webkit-appearance: none;
-    padding: 12px 25px 15px 25px;
-    border-radius: 7px;
-    line-height: 0;
-    margin-top: 10px;
-    border: 3px solid #333f50;
-">검색
-                    </button>
-                </form>
-            </div>
-        </div>
-    </article>
-
-
-    <div id="boardComment">
-        <?php if($_SESSION['ses_perm']==1){require_once('./comment.php');} ?>
-    </div>
-</article>
 </body>
 </html>
-
