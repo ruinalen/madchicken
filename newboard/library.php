@@ -33,6 +33,8 @@
 			$file_name = $new_file_name.'.'.$ext; //파일 이름뒤에 확장자를 붙인다.
 			$file_name_db = $file_name . '||' . $file['name']; //db에 저장될 화일명 예) 새파일명||원래파일명
 			//화일을 지정된 폴더로 이동시킨다.
+        echo $file_name;
+        echo $file_name_db;
 			if(move_uploaded_file($file['tmp_name'] ,$save_dir . '/' . $file_name)) {
 					@unlink($file['tmp_name']);
 					return $file_name_db;
