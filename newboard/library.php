@@ -40,7 +40,7 @@
 					return $file_name_db;
 			} else {
 					@unlink($file['tmp_name']);
-					MsgBox("업로드 과정에서 에러가 발생하였습니다.");
+                //MsgBox("업로드 과정에서 에러가 발생하였습니다.");
 			}
 	}
 	
