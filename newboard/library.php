@@ -1,5 +1,5 @@
 ﻿<?
-$save_dir = "/var/www/html/madchicken/uploads";
+$save_dir = "./uploads";
 
 	function upload(&$file,$limit_file_size)
 	{
