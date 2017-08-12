@@ -50,7 +50,7 @@ $row=mysqli_fetch_array($result);
 			?>
 		</font>
 		<BR><BR>
-		<? include "comment.php"; ?>
+        <? //include "comment.php"; ?>
 	</td>				
 </tr>
 <!-- 기타 버튼 들 -->
