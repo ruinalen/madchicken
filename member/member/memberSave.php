@@ -56,12 +56,11 @@
 
     //이제부터 넣기 시작
     $sql = "INSERT INTO member VALUES(NULL,'{$memberId}','{$memberName}','{$memberNickName}','{$memberPw}','{$memberEmailAddress}','{$memberBirthDay}','{$memberPermission}');";
-    echo $sql;
     if($dbConnect->query($sql)){
         echo '회원가입 성공';
     }
     else{
-        echo "씨바 왜 안되냐";
+        echo "회원가입 실패";
     }
 ?>
 

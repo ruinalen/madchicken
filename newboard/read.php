@@ -60,7 +60,7 @@ $row=mysqli_fetch_array($result);
 			<tr>
 				<td width=280 align=left height=20>
 					<a href=list.php?no=<?=$_GET[no]?>&field=<?=$_GET[field]?>&search_word=<?=$_GET[search_word]?>><font color=white>[목록보기]</font></a>
-					<a href=reply.php?id=<?=$_GET[id]?>><font color=white>[답글달기]</font></a>
+                    <!--a href=reply.php?id=<?= $_GET[id] ?>><font color=white>[답글달기]</font></a>-->
 					<a href=write.php><font color=white>[글쓰기]</font></a>
 					<a href=edit.php?id=<?=$_GET[id]?>><font color=white>[수정]</font></a>
 					<a href=predel.php?id=<?=$_GET[id]?>><font color=white>[삭제]</font></a>
