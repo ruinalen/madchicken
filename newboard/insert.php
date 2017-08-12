@@ -14,7 +14,6 @@ $max_thread = ceil($max_thread_fetch[0]/1000)*1000+1000;
 if ($_FILES[upfile][name]) $filename = upload($_FILES[upfile], 5000000 * 1024);
 echo "파일이름은 : "+$filename+"입니다";
 $query = "insert into $board values (0,$max_thread,0,'$_POST[name]','$_POST[pass]','$_POST[email]','$_POST[title]','$_POST[comment]',". time() .",'',0,'$filename',0)";
-echo $query;
 $result=mysqli_query($conn,$query);
 
 //데이터베이스와의 연결 종료

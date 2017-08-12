@@ -3,10 +3,12 @@ include "db_info.php";
 
 if (!trim($HTTP_POST_VARS[comment])) {
 ?>
-<script>
-	 alert("내용을 입력하여 주십시오.");
- 	 history.back(-1);
-</script>
+
+    //
+    <script>
+        //	 alert("내용을 입력하여 주십시오.");
+        // 	 history.back(-1);
+        //</script>
 <?
 	exit;
 }
