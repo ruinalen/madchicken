@@ -1,5 +1,5 @@
 ﻿<?
-$save_dir = "/uploads";
+$save_dir = "/tmp";
 
 	function upload(&$file,$limit_file_size)
 	{
